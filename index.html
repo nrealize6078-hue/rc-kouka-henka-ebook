@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="REALIZECLUB と LMP の機能別効果と変化｜強みを説明するための詳細定義　機能24項目の効果と変化、7つの立場への波及、語る言葉と確認指標">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0e2245">
+<meta property="og:type" content="book">
+<meta property="og:title" content="REALIZECLUB と LMP の機能別効果と変化">
+<meta name="author" content="大橋孝行">
+<meta property="og:description" content="強みを説明するための詳細定義">
+<title>REALIZECLUB と LMP の機能別効果と変化</title>
+<style>
+:root{
+  --navy:#0e2245; --deep:#081630; --gold:#c9a24b; --gold-l:#e4c87e; --gold-d:#94701f;
+  --ink:#2b3648; --muted:#667385; --mist:#f3f5f9; --tint:#eaeef5; --cream:#faf6ec;
+  --barh:56px; --safeT:env(safe-area-inset-top,0px); --safeB:env(safe-area-inset-bottom,0px);
+  --bar:calc(var(--barh) + var(--safeT));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;padding-top:var(--bar);background:#e9ecf1;color:var(--ink);line-height:1.82;
+  font-family:"Noto Sans JP","Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic",
+    "Meiryo",system-ui,sans-serif;
+  overflow-wrap:anywhere;line-break:strict}
+a{color:var(--navy)}
+
+/* ============ 上部固定バー（目次） ============ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--bar);
+  padding:var(--safeT) max(14px,3vw) 0;background:var(--navy);color:#fff;
+  display:flex;align-items:center;gap:12px;box-shadow:0 2px 14px #0e22454d}
+.topbar .home{color:var(--gold-l);font-weight:700;font-size:.74rem;letter-spacing:.16em;
+  text-decoration:none;white-space:nowrap;flex:none}
+.topbar .now{flex:1;min-width:0;color:#c5cdd8;font-size:.76rem;line-height:1.35;margin:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+.topbar .now b{color:var(--gold-l);font-weight:700;margin-right:.5em}
+.tocbtn{flex:none;display:flex;align-items:center;gap:7px;height:38px;padding:0 15px;
+  border:1px solid #e4c87e5c;border-radius:19px;background:transparent;color:var(--gold-l);
+  font:700 .8rem/1 inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tocbtn:hover{background:#ffffff12;border-color:var(--gold-l)}
+.prog{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--gold);
+  transition:width .12s linear}
+
+/* ============ 表紙 ============ */
+.cover{min-height:calc(100svh - var(--bar));background:var(--deep);color:#fff;position:relative;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:9vw max(7vw,24px) 14vw;overflow:hidden}
+.cover>*{position:relative;max-width:1000px}
+.cover .brand{color:var(--gold-l);font-size:clamp(.9rem,2.6vw,1.5rem);font-weight:700;
+  letter-spacing:.24em;margin:0 0 1.4rem}
+.cover h1{color:#fff;font-size:clamp(1.8rem,6vw,3.8rem);line-height:1.3;margin:0;
+  font-weight:700;letter-spacing:.02em}
+.cover .tagline{color:#fff;font-size:clamp(1rem,2.8vw,1.7rem);font-weight:700;line-height:1.6;
+  margin:2rem 0 0;padding-left:1rem;box-shadow:inset 5px 0 0 var(--gold)}
+.cover .meta{color:var(--gold-l);font-size:clamp(.72rem,1.9vw,1rem);font-weight:700;
+  letter-spacing:.14em;margin:1.4rem 0 0}
+.cover .scroll{position:absolute;left:0;right:0;bottom:max(14px,var(--safeB));text-align:center;
+  color:#7d8aa0;font-size:.66rem;letter-spacing:.26em;max-width:none;margin:0}
+.printbtn{position:absolute;z-index:3;right:max(14px,3vw);top:14px;
+  border:1px solid #e4c87e66;background:#0e224599;color:var(--gold-l);padding:10px 14px;
+  font:700 .64rem/1 inherit;letter-spacing:.12em;cursor:pointer}
+.printbtn:hover{background:var(--navy);border-color:var(--gold-l);color:#fff}
+.coverart{display:block;width:auto;height:auto;max-width:min(100%,560px);margin:auto;
+  max-height:calc(100svh - var(--bar) - 74px);object-fit:contain;box-shadow:0 16px 44px #0006}
+.cover.art{align-items:center;padding:16px max(14px,3vw) 46px;
+  background:linear-gradient(180deg,#f4f8fc 0%,#dfeaf5 100%)}
+.cover.art .coverart{box-shadow:0 14px 40px #13294b33}
+.cover.art .scroll{color:#6f8aa8}
+.cover.art .printbtn{background:#ffffffcc;border-color:#13294b40;color:#13294b}
+
+/* ============ レイアウト ============ */
+.layout{max-width:1320px;margin:auto;display:grid;grid-template-columns:290px minmax(0,1fr);
+  gap:48px;padding:64px 32px 110px}
+main{background:#fff;padding:16px 64px 74px;box-shadow:0 12px 45px #0e224514;min-width:0}
+
+/* ============ 目次（線を使わず余白と地色で区切る） ============ */
+nav.side{position:sticky;top:calc(var(--bar) + 22px);align-self:start;background:#fff;
+  padding:20px 14px;box-shadow:0 8px 30px #0e224514;
+  max-height:calc(100svh - var(--bar) - 44px);overflow-y:auto}
+nav.side h2{margin:0 0 10px 4px;font-size:.7rem;letter-spacing:.24em;color:var(--gold-d)}
+.toc a{display:grid;grid-template-columns:26px 1fr;gap:8px;text-decoration:none;
+  color:var(--ink);padding:6px 6px;border-radius:6px;align-items:start;
+  -webkit-tap-highlight-color:#0e224514}
+.toc a:hover{background:var(--mist)}
+.toc .n{color:var(--gold-d);font-weight:700;font-size:.72rem;line-height:1.55}
+.toc .t{font-size:.8rem;line-height:1.5;font-weight:700;color:var(--navy)}
+.toc a.l2 .t{font-weight:500;color:var(--ink)}
+.toc a.part{margin-top:10px;background:var(--mist)}
+.toc a.part .t{color:var(--gold-d);letter-spacing:.04em}
+.toc a.l2+a.l1{margin-top:10px}
+.toc a[aria-current="true"]{background:var(--tint)}
+.toc a[aria-current="true"] .t{color:var(--gold-d)}
+
+/* ============ 本文 ============ */
+section{padding:52px 0 26px;scroll-margin-top:calc(var(--bar) + 10px)}
+.eyebrow{color:var(--gold-d);font-size:.72rem;font-weight:700;letter-spacing:.2em;margin:0 0 8px}
+h1{color:var(--navy);font-size:clamp(1.34rem,2.7vw,2rem);line-height:1.42;margin:0 0 20px;
+  font-weight:700}
+h1:after{content:"";display:block;width:46px;height:4px;background:var(--gold);margin-top:14px}
+h1 .num{color:var(--gold-d);margin-right:.5em}
+section.part{padding-top:70px}
+section.part h1{font-size:clamp(1.6rem,3.4vw,2.4rem)}
+.role{margin:0 0 26px;color:var(--navy);font-size:1.08rem;font-weight:700;line-height:1.7}
+.role span{display:inline-block;color:#fff;background:var(--gold-d);font-size:.7rem;
+  letter-spacing:.14em;padding:.18em .7em;border-radius:3px;margin-right:.7em;
+  vertical-align:.12em}
+h2.sub{color:var(--navy);font-size:1.16rem;line-height:1.5;margin:36px 0 12px;font-weight:700}
+h2.sub:before{content:"";display:inline-block;width:.5em;height:.5em;background:var(--gold);
+  margin-right:.55em;vertical-align:.14em}
+
+main p{margin:0 0 1em;font-size:1rem;line-height:1.9;text-align:justify}
+strong{color:var(--navy)}
+.cite{display:inline-block;font-size:.66em;font-weight:700;color:var(--gold-d);
+  background:var(--cream);border-radius:3px;padding:0 .35em;margin:0 .15em;
+  vertical-align:.35em;line-height:1.5}
+
+/* ラベル付きの段落（直接効果・他機能と連動する強み・強みを実証する指標） */
+.lab{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:0 18px;margin:0 0 18px}
+.lab .lb{margin:0;color:var(--gold-d);font-size:.84rem;font-weight:700;line-height:1.9;
+  letter-spacing:.04em}
+.lab .tx{margin:0}
+
+/* 変化のつながり */
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:st}
+ol.steps li{counter-increment:st;position:relative;margin:0 0 14px;padding:.5em .9em .5em 2.8em;
+  background:var(--mist);border-radius:6px;color:var(--navy);font-weight:700;line-height:1.6}
+ol.steps li:before{content:counter(st);position:absolute;left:.9em;top:.5em;color:var(--gold-d);
+  font-size:.86em}
+ol.steps li:not(:last-child):after{content:"";position:absolute;left:1.15em;bottom:-11px;
+  border:6px solid transparent;border-top-color:var(--gold);border-bottom:0}
+
+/* 営業で語る言葉 */
+.say{margin:22px 0 22px;background:var(--cream);border-radius:8px;padding:16px 20px}
+.say .lb{margin:0 0 6px;color:var(--gold-d);font-size:.8rem;font-weight:700;letter-spacing:.08em}
+.say blockquote{margin:0;color:var(--navy);font-size:1.06rem;font-weight:700;line-height:1.8}
+.say blockquote+blockquote{margin-top:10px}
+.say.solo{margin-top:6px}
+
+.srcref{color:var(--muted);font-size:.8rem!important;margin:4px 0 0!important}
+
+/* ============ 表（罫線を使わず、地色の縞で行を分ける） ============ */
+.tbl{margin:18px 0 26px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl table{width:100%;border-collapse:separate;border-spacing:0;font-size:.9rem;line-height:1.7}
+.tbl th{background:var(--navy);color:#fff;font-weight:700;font-size:.8rem;text-align:left;
+  padding:.6em .9em;letter-spacing:.04em}
+.tbl th:first-child{border-radius:6px 0 0 0}
+.tbl th:last-child{border-radius:0 6px 0 0}
+.tbl td{padding:.75em .9em;vertical-align:top}
+.tbl tbody tr:nth-child(odd) td{background:var(--mist)}
+.tbl td:first-child{font-weight:700;color:var(--navy)}
+.tbl table.t3 td:first-child{width:22%}
+.tbl table.t2 td:first-child{width:28%}
+
+.endmark{text-align:center;padding:62px 0 6px}
+.endmark .m{color:var(--gold-d);font-size:1.2rem;font-weight:700;letter-spacing:.16em;margin:0}
+.endmark .c{color:var(--navy);font-size:1rem;font-weight:700;margin:.6em 0 0;text-align:center}
+.endmark .s{color:var(--muted);font-size:.8rem;margin:.7em 0 0;text-align:center}
+
+/* 29 真似しにくさ・32 参照資料 */
+ol.pts{margin:10px 0 22px;padding:0;list-style:none;counter-reset:pt}
+ol.pts li{counter-increment:pt;position:relative;padding:0 0 0 2.6em;margin:0 0 14px;line-height:1.85}
+ol.pts li:before{content:counter(pt);position:absolute;left:0;top:-.1em;color:var(--gold);
+  font-size:1.5rem;font-weight:700;line-height:1.2}
+ul.refs{margin:6px 0 20px;padding:0;list-style:none}
+ul.refs li{padding:.5em .8em;border-radius:6px;margin:0 0 6px;background:var(--mist);
+  font-size:.9rem;line-height:1.7}
+.url{display:none}
+
+/* ============ オーバーレイ目次 ============ */
+#tocpanel{position:fixed;inset:0;z-index:70;background:#fff;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;transform:translateY(100%);transition:transform .26s ease;
+  visibility:hidden;padding:calc(16px + var(--safeT)) max(16px,4vw) calc(40px + var(--safeB))}
+#tocpanel.open{transform:translateY(0);visibility:visible}
+#tocpanel .hd{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding-bottom:12px;margin-bottom:6px}
+#tocpanel .hd p{margin:0;color:var(--navy);font-size:1.35rem;font-weight:700;line-height:1.3}
+#tocpanel .hd small{display:block;color:var(--gold-d);font-size:.6rem;letter-spacing:.26em;
+  font-weight:700;margin-bottom:3px}
+#tocpanel .close{border:0;background:var(--mist);color:var(--navy);width:46px;height:46px;
+  border-radius:23px;font-size:1.25rem;cursor:pointer;flex:none}
+#tocpanel .toc a{padding:11px 8px;min-height:48px;grid-template-columns:32px 1fr}
+#tocpanel .toc .n{font-size:.8rem}
+#tocpanel .toc .t{font-size:.95rem}
+
+.topbtn{position:fixed;z-index:50;right:16px;bottom:calc(16px + var(--safeB));
+  width:46px;height:46px;border:0;border-radius:23px;background:#fff;color:var(--navy);
+  font-size:1.05rem;cursor:pointer;box-shadow:0 4px 16px #0e224533;opacity:0;
+  pointer-events:none;transition:opacity .2s}
+.topbtn.on{opacity:1;pointer-events:auto}
+
+/* ============ 画面幅 ============ */
+@media(max-width:1150px){
+  .layout{grid-template-columns:240px minmax(0,1fr);gap:30px;padding:48px 20px 90px}
+  main{padding:12px 34px 66px}
+}
+@media(max-width:1000px){
+  .layout{display:block;padding:0;max-width:none}
+  main{padding:0 20px 76px;box-shadow:none}
+  nav.side{display:none}
+  section{padding:38px 0 16px}
+  h1{font-size:1.3rem}
+  main p{font-size:.99rem;line-height:1.88;text-align:left}
+}
+/* スマホ：表を1行ずつのカードにする（横スクロールさせない） */
+@media(max-width:700px){
+  .lab{display:block}
+  .lab .lb{margin-bottom:2px}
+  .tbl{overflow:visible}
+  .tbl table,.tbl tbody,.tbl tr,.tbl td{display:block;width:auto!important}
+  .tbl thead{display:none}
+  .tbl tbody tr{background:var(--mist);border-radius:8px;padding:12px 14px;margin:0 0 10px}
+  .tbl tbody tr:nth-child(odd) td{background:transparent}
+  .tbl td{padding:0;margin:0 0 8px}
+  .tbl td:last-child{margin-bottom:0}
+  .tbl td:first-child{font-size:.98rem;margin-bottom:8px}
+  .tbl td:not(:first-child):before{content:attr(data-h);display:block;color:var(--gold-d);
+    font-size:.72rem;font-weight:700;letter-spacing:.04em;line-height:1.5}
+  .say{padding:14px 16px}
+}
+@media(max-width:360px){
+  main{padding:0 14px 76px}
+  .topbar{gap:8px}
+  .topbar .now{display:none}
+  .tocbtn{padding:0 12px}
+}
+@media(hover:none){.tocbtn:hover,.printbtn:hover{background:transparent}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#tocpanel{transition:none}}
+
+@media print{
+  @page{size:A4; margin:18mm}
+  body{background:#fff;padding-top:0;font-size:10pt}
+  .topbar,.topbtn,#tocpanel,.printbtn,.cover .scroll,nav.side{display:none!important}
+  .cover{min-height:0;break-after:page;background:#fff}
+  .layout{display:block;max-width:none;padding:0}
+  main{padding:0;box-shadow:none}
+  tr,.lab,.say{break-inside:avoid}
+  h1{break-after:avoid}
+}
+</style>
+</head>
+
+<body id="top">
+
+<header class="topbar">
+  <a class="home" href="#top">REALIZE CLUB</a>
+  <p class="now"><b id="now-no"></b><span id="now-ttl"></span></p>
+  <button class="tocbtn" id="tocbtn" type="button"
+          aria-controls="tocpanel" aria-expanded="false">
+    <span aria-hidden="true">&#9776;</span>目次</button>
+  <span class="prog" id="prog"></span>
+</header>
+
+<section class="cover art" id="cover" aria-label="表紙">
+  <img class="coverart" src="cover.jpg" fetchpriority="high"
+       alt="REALIZECLUB と LMP の機能別効果と変化 ― 強みを説明するための詳細定義／2026年9月11日　改訂 v0.3／大橋孝行 著">
+  <button class="printbtn" type="button" onclick="window.print()">PRINT / PDF</button>
+  <p class="scroll">SCROLL</p>
+</section>
+
+<div class="layout">
+<nav class="side" aria-label="目次">
+  <h2>CONTENTS</h2>
+  <div class="toc" id="toc-side"></div>
+</nav>
+
+<main>
+
+<section id="front">
+<p class="eyebrow">INTRODUCTION</p>
+<h1>はじめに</h1>
+<p>REALIZECLUBの役割を、機能が何に効くか、利用者の行動がどう変わるか、その変化が社員・会社・顧客・社会にどんな価値を生むかまで定義する。LMP加盟店については、潜在顧客への営業ノウハウ、営業育成、法人開拓、REALIZE OSMA、供給・専門家連携まで含める。</p>
+<p>REALIZECLUBは、企業との接点から、本人の理解、人生教育、家族との対話、専門相談、実行、継続支援をつなぐ。その支援を地域で担うLMPには、購入を考えていなかったファミリー世帯のマイホーム購入を、即日の意思決定まで導く体系的な営業ノウハウがある。これは大橋氏が自社の固有の強みとして示した技術である。<span class="cite">I6</span></p>
+<p>LMPの強みは、この営業技術自体と、それを地域で展開する仕組みの両方にある。REALIZECLUBが生活者との接点を広げ、教材・ARENA・アオ先生が習得を支え、OSMAが実行・振り返り・育成を支える。既に持つ営業ノウハウと、全機能を活用して加盟店へ広げる設計を、分けて説明する。</p>
+<p>「人生100年時代の義務教育を届ける人生支援プラットフォーム」という共通定義を、24項目の具体的な価値へ展開する。学ぶ内容は、お金・住まいという人生を動かすための二大生活基盤と、万が一・健康・災害・老後への備えである。</p>
+<h2 class="sub">本書で扱う効果</h2>
+<p>全機能を活用した場合の価値設計として、直接効果、行動の変化、事業・生活・社会への波及を区別する。因果関係や成果の大きさには検証前の仮説を含む。営業で使う際は提供中の機能と構想を区別する。営業技術の「唯一無二」という評価は、大橋氏の不動産業界24年の経験と、同等の体系を他社で聞いたことがないという本人の説明に基づく。<span class="cite">I6</span> 本書による全国調査の結論ではない。</p>
+<p>元の6者である入会企業・経営者・社員・家族・LMP加盟店・社会に、専門相談や取引を利用する「顧客」の視点を加える。同じ人でも、社員として使う場面と、顧客として相談する場面で得る価値は異なる。営業向け機能では、社員をLMPの営業担当として明記する。</p>
+<h2 class="sub">機能の構造</h2>
+<div class="tbl"><table class="t2"><thead><tr><th>領域</th><th>含める機能と支援</th></tr></thead><tbody><tr><td data-h="領域">LIFEJOURNEY</td><td data-h="含める機能と支援">LIFECORE、LIFESHIFT、LIFEEventCheck、LIFECheck42、LIFEAcademy42、LIFEROADMAP、LIFEMeeting、LIFEConsult</td></tr><tr><td data-h="領域">継続する人生支援</td><td data-h="含める機能と支援">ミオ先生、LIFERecord、各種専門相談窓口</td></tr><tr><td data-h="領域">日常の利用と企業姿勢</td><td data-h="含める機能と支援">REALIZEマーケット、Bマーク</td></tr><tr><td data-h="領域">LMPの事業と育成</td><td data-h="含める機能と支援">潜在顧客営業、マニュアル・プレゼン・Eラーニング、AI Sales ARENA、アオ先生、PRESIDENT JOURNEY、RC地域企業基盤</td></tr><tr><td data-h="領域">支援を動かす運営</td><td data-h="含める機能と支援">OSMAの受付、案件・行動管理、引き継ぎ・継続支援、経営可視化・育成・本部支援</td></tr><tr><td data-h="領域">実行の選択肢</td><td data-h="含める機能と支援">物件供給と専門家ネットワーク</td></tr></tbody></table></div>
+<p>LIFEConsultはLIFEJOURNEYの8番目のステップで、各種専門相談窓口へつなぐ。専門窓口は、その先の具体的な相談・提案・実行を担う。ミオ先生とLIFERecordは、旅の全体を伴走と記録で支える。</p>
+</section>
+<section id="part" class="part">
+<p class="eyebrow">PART</p>
+<h1>機能別の効果と変化</h1>
+<p>各項目では、直接効果、変化のつながり、7つの立場への波及、他機能と連動する強み、営業で語る言葉、確認指標を示す。</p>
+</section>
+<section id="s01">
+<p class="eyebrow">機能 01</p>
+<h1><span class="num">01</span>LIFECORE</h1>
+<p class="role"><span>役割</span>自分と相手を理解し、関わり方を具体的に変える。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">性格・価値観・思考や行動の傾向を、本人との対話で確かめながら言語化する。上司、同僚、家族、相談担当が、相手に伝わる説明や支援の方法を考える材料を持てる。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>傾向を共有する</li><li>指示の順番・伝え方・確認方法を変える</li><li>誤解や確認不足が起きる場面を減らす</li><li>育成、連携、接客の質を高める。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>活用場面</th><th>具体的に変えること</th><th>そこから生まれる変化</th></tr></thead><tbody><tr><td data-h="活用場面">指示・報告</td><td data-h="具体的に変えること">口頭で即答を求める場面を見直し、事前資料や確認時間を用意する。</td><td data-h="そこから生まれる変化">理解のずれを早く見つけ、手戻りを抑える。</td></tr><tr><td data-h="活用場面">育成・配置</td><td data-h="具体的に変えること">本人の希望、得意な場面、実際の行動を照らして役割や教え方を調整する。</td><td data-h="そこから生まれる変化">能力を発揮できる場面と、支援が必要な場面を具体化する。</td></tr><tr><td data-h="活用場面">採用・受け入れ</td><td data-h="具体的に変えること">面接で確かめたい点と入社後の関わり方を整理する。</td><td data-h="そこから生まれる変化">相互理解に基づく説明と受け入れを進める。</td></tr><tr><td data-h="活用場面">チーム・接客</td><td data-h="具体的に変えること">相手の考える順番に合わせ、目的・事実・気持ちを確認する。</td><td data-h="そこから生まれる変化">連携や提案のすれ違いを減らす。</td></tr><tr><td data-h="活用場面">家庭・AI対話</td><td data-h="具体的に変えること">自分と家族の違いを知り、ミオ先生との対話にも本人の傾向を活かす。</td><td data-h="そこから生まれる変化">職場で得た理解を、暮らしと人生設計にも使う。</td></tr></tbody></table></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">指導・面談・役割分担の方法を見直せる。</td><td data-h="その先に生まれる価値">手戻りや摩擦の改善を通じて、育成・定着を支える。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自分の伝え方と、社員が受け取る意味の差を確認する。</td><td data-h="その先に生まれる価値">個別の関わり方を管理職と共有し、育成を組織で担える。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">強み、負担を感じる場面、必要な支援を言葉にする。</td><td data-h="その先に生まれる価値">相談・挑戦・役割調整をしやすくなる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">性格や優先順位の違いを前提に対話する。</td><td data-h="その先に生まれる価値">家計や将来の話を、互いを理解しながら進められる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">営業育成と顧客への説明に相手理解を取り入れる。</td><td data-h="その先に生まれる価値">担当者の一律な説明を見直し、提案の伝わり方を改善する。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">自分に合う順番や速度で説明を受ける。</td><td data-h="その先に生まれる価値">質問しやすくなり、納得した選択を支える。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">違いを知り、関わり方を調整する経験が広がる。</td><td data-h="その先に生まれる価値">間接的に、個性を尊重する職場・家庭を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">LIFECOREの理解を、ミオ先生の対話、学習、LIFEMeeting、営業育成へ継続して活かす。人物理解を複数の生活場面で使う接続が訴求点になる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>一人ひとりの違いを、育成・連携・家族との対話に活かす。人を理解する力が、会社の支える力になる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">指示の手戻り件数、面談で合意した行動の実施率、相互理解の自己評価、一定期間の定着状況。診断結果だけで採否・配置・能力を断定しない。</p></div>
+<p class="srcref">参照：I1、I4</p>
+</section>
+<section id="s02">
+<p class="eyebrow">機能 02</p>
+<h1><span class="num">02</span>LIFESHIFT</h1>
+<p class="role"><span>役割</span>時代の変化を知り、人生の判断の前提を更新する。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">働き方、家族、住まい、長い老後などの変化を学び、自分が当然だと思っていた前提を確認する。過去の経験と、今の条件を照らし合わせるきっかけをつくる。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>変化を知る</li><li>自分への影響を考える</li><li>今までの選択を見直す</li><li>必要な学びや準備を始める。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が暮らしや働き方の変化を考える機会を用意する。</td><td data-h="その先に生まれる価値">社員の学び直しや働き方の相談につなげられる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自分の世代の前提と社員の状況の違いを考える。</td><td data-h="その先に生まれる価値">人生支援の方針や社内説明を、現在の状況に合わせられる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">今の暮らしと将来の選択を、自分で問い直す。</td><td data-h="その先に生まれる価値">受け身の不安を、調べる・学ぶ行動に変えやすくなる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">世代ごとの常識を共有し、違いを確かめる。</td><td data-h="その先に生まれる価値">住まい・働き方・老後を、今の条件から話し合える。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">住まいを考える社会的背景を説明できる。</td><td data-h="その先に生まれる価値">住宅検索前の人とも、暮らしを考える会話を始められる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">変化の説明を自分の条件と照らし合わせる。</td><td data-h="その先に生まれる価値">一般論に流されず、検討すべき選択肢を絞れる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">変化に合わせて学び直す習慣を広げる。</td><td data-h="その先に生まれる価値">間接的に、判断を更新できる生活者を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">変化への気づきをLIFEEventCheckの予定、LIFECheck42の準備、LIFEAcademy42の学習へつなぐ。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>時代の変化を、自分の人生を見直すきっかけにする。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">学習前後に見直した前提、次のステップへの参加率、本人が選んだ見直し行動の実施率。</p></div>
+<p class="srcref">参照：I1</p>
+</section>
+<section id="s03">
+<p class="eyebrow">機能 03</p>
+<h1><span class="num">03</span>LIFEEventCheck</h1>
+<p class="role"><span>役割</span>未来の出来事を、今の準備に変える。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">結婚、出産、住み替え、転職、介護、定年などを時間軸で整理する。本人が希望する出来事と、備えたい出来事を区別して、準備の着手時期を考えられる。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>出来事と時期を見渡す</li><li>必要な準備が見える</li><li>早めに家族と話し、相談する</li><li>選択肢を検討する時間を確保する。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が必要な支援を自分から相談できる機会を持つ。</td><td data-h="その先に生まれる価値">本人が共有した希望に応じて、働き方や制度利用を準備できる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">社員の人生に変化があることを前提に支援体制を考える。</td><td data-h="その先に生まれる価値">急な困りごとにも相談先を案内できる経営になる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">将来の出来事を、自分の予定として整理する。</td><td data-h="その先に生まれる価値">直前になって慌てる場面を減らす準備ができる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">出来事が重なる時期や役割分担を確認する。</td><td data-h="その先に生まれる価値">家計・住まい・介護などを一緒に考える時間を持てる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">本人が相談を希望した時期と背景を把握する。</td><td data-h="その先に生まれる価値">一律な連絡を見直し、必要な時期の支援を計画できる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">相談の目的と希望時期を伝えやすくなる。</td><td data-h="その先に生まれる価値">複数の選択肢を比較する余裕を持ちやすい。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">人生の節目に先回りして備える機会を増やす。</td><td data-h="その先に生まれる価値">間接的に、問題の深刻化前に支援へつながる人を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">予定をLIFEROADMAPへ落とし込み、本人が希望した相談をLIFEConsultとOSMAの次の対応へつなぐ。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>未来の出来事が見えると、今日からできる準備が見えてくる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">予定の整理率、準備の着手率、本人が設定した期限までの相談実施率。人生予定の会社への共有は本人が選ぶ。</p></div>
+<p class="srcref">参照：I1、I2</p>
+</section>
+<section id="s04">
+<p class="eyebrow">機能 04</p>
+<h1><span class="num">04</span>LIFECheck42</h1>
+<p class="role"><span>役割</span>人生の備えを見えるようにし、学ぶ優先順位を決める。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">お金・住まい・万が一・健康・災害・老後の42問で、知識や備えの現在地を本人が確認する。漠然とした不安を、確認したいことと学びたいことへ整理する。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>6教科の準備を確かめる</li><li>課題の優先順位をつける</li><li>必要な講座と相談を選ぶ</li><li>自分に必要な行動へ進む。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員に人生全体を振り返る機会を用意する。</td><td data-h="その先に生まれる価値">利用者本人に合う学びと支援を届けやすくなる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">社員に何を学ぶ機会として用意するかを考えられる。</td><td data-h="その先に生まれる価値">人生支援を具体的な教育施策として説明できる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">不安の内容と、まだ確認していないことを把握する。</td><td data-h="その先に生まれる価値">何から取り組むかを決めやすくなる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">現在の備えについて、話し合う材料を持つ。</td><td data-h="その先に生まれる価値">家族で取り組む課題と役割を決めやすくなる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">本人が相談したい課題を確認して面談する。</td><td data-h="その先に生まれる価値">関係のない商品説明を減らし、相談の焦点を合わせられる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">自分の疑問を整理して専門家に伝える。</td><td data-h="その先に生まれる価値">必要な比較や説明を受けやすくなる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">人生の備えを定期的に点検する習慣を広げる。</td><td data-h="その先に生まれる価値">間接的に、知識や備えの不足に早く気づく機会を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">診断結果から学習・設計・相談へ進める。結果の確認と、実際の備えをつくる行動がつながる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>自分の現在地がわかるから、今学ぶことと、次に備えることが決まる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">課題に対応する講座の受講率、具体的な準備の着手率、再確認時の行動変化。点数だけで生活の安全性を保証しない。</p></div>
+<p class="srcref">参照：I1</p>
+</section>
+<section id="s05">
+<p class="eyebrow">機能 05</p>
+<h1><span class="num">05</span>LIFEAcademy42</h1>
+<p class="role"><span>役割</span>知識を、自分の判断に使える理解に変える。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">6教科に関する動画や教科書を、必要性と結びつけて学ぶ。わからない点をミオ先生に尋ね、自分の家計や住まいの選択に置き換えて考える。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>必要な知識を学ぶ</li><li>自分の場合で説明してみる</li><li>比較する基準を持つ</li><li>専門家の提案を理解して選ぶ。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が人生の基礎を学べる環境を用意する。</td><td data-h="その先に生まれる価値">福利厚生を、社員の判断する力を育てる投資にできる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">個別に教え込まずに、共通の学ぶ機会を届ける。</td><td data-h="その先に生まれる価値">支援の対象人数を増やしやすくなる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">専門用語や仕組みを、自分の言葉で理解する。</td><td data-h="その先に生まれる価値">相談時に質問し、条件を比較しやすくなる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家計や備えを考える共通の知識を持つ。</td><td data-h="その先に生まれる価値">価値観と事実を分けて話し合いやすくなる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">基礎知識を持った相談者と面談できる。</td><td data-h="その先に生まれる価値">個別条件の確認や比較検討に時間を使いやすくなる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">提案内容の意味と負担を確認できる。</td><td data-h="その先に生まれる価値">理解のないまま進める契約を減らすことを目指せる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">生活に必要な知識を学ぶ機会を広げる。</td><td data-h="その先に生まれる価値">間接的に、情報の理解の差による不利を小さくする。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">Check42で学ぶ理由が生まれ、学びがROADMAPの計画とConsultの相談に使われる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>知識を、自分と家族の未来を選ぶ力に変える。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">理解確認、本人が説明できる項目、計画への反映率、相談時の理解度。動画再生数と習得は分ける。</p></div>
+<p class="srcref">参照：I1、I4</p>
+</section>
+<section id="s06">
+<p class="eyebrow">機能 06</p>
+<h1><span class="num">06</span>LIFEROADMAP</h1>
+<p class="role"><span>役割</span>希望と備えを、実行できる人生設計にする。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">価値観、出来事、家計、学習、相談の記録をもとに、いつ何をするかを整理する。優先順位と次の一歩を言葉にし、変化に合わせて計画を見直す。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>希望と現状を整理する</li><li>時期・優先順位・次の行動を決める</li><li>家族と調整する</li><li>実行と見直しを続ける。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が将来を考えられる環境を用意する。</td><td data-h="その先に生まれる価値">働き方と生活上の希望を本人が整理し、必要な相談へ進める。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自分の人生計画と、社員支援の方針をそれぞれ持つ。</td><td data-h="その先に生まれる価値">目の前の対応と長期的に大切にすることを整理できる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">何をいつ進めるかを具体的に決める。</td><td data-h="その先に生まれる価値">学びが日々の選択や行動につながる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家族共通の希望と異なる優先順位を確認する。</td><td data-h="その先に生まれる価値">将来の予定を、話し合いで調整しやすくなる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">本人が希望する目的・時期・条件をもとに提案する。</td><td data-h="その先に生まれる価値">人生設計に沿った相談対応と継続支援を計画できる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">商品を選ぶ理由を、自分の計画に照らして確かめる。</td><td data-h="その先に生まれる価値">その場の魅力と、長く続けられる選択を比較できる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">希望を計画にし、変化に合わせて見直す習慣を広げる。</td><td data-h="その先に生まれる価値">間接的に、生活者が未来に主体的に備える文化を育てる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">Recordに残る本人の理解を使い、Meetingで共有し、Consultから具体的な実行へ進める。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>これからの希望を、今日から動ける人生設計にする。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">次の行動の設定率・実施率、家族との共有率、定期的な計画更新率。計画への記載を実行済みとは扱わない。</p></div>
+<p class="srcref">参照：I1</p>
+</section>
+<section id="s07">
+<p class="eyebrow">機能 07</p>
+<h1><span class="num">07</span>LIFEMeeting</h1>
+<p class="role"><span>役割</span>人生設計を、家族の納得と協力につなげる。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">自分が大切にすること、家族の希望、時期、負担、迷いを共有する。判断する前に話し合い、共通点と違いを確かめて、次の行動を決める。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>それぞれの希望を共有する</li><li>違いと優先順位を確認する</li><li>比較の条件を揃える</li><li>家族で納得した行動へ進む。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が家庭の課題を話し合える機会を支える。</td><td data-h="その先に生まれる価値">家庭と仕事の調整について、本人が希望を整理しやすくなる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">本人の背後に家族の希望があることを理解する。</td><td data-h="その先に生まれる価値">社員支援の説明や制度案内を家族まで届く形で考えられる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">自分だけで抱えていた考えを家族に伝える。</td><td data-h="その先に生まれる価値">協力が必要な行動を、一緒に進めやすくなる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">異なる希望や不安を話せる材料を持つ。</td><td data-h="その先に生まれる価値">一方の意見だけで進む意思決定を見直せる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">家族が合意した条件と、まだ迷う点を確認する。</td><td data-h="その先に生まれる価値">提案後に初めて出てくる条件を減らし、比較を進めやすくする。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">家族で確認したい点を事前に整理する。</td><td data-h="その先に生まれる価値">相談や契約の前に、納得を確かめられる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">将来を対話で決める経験を家庭に広げる。</td><td data-h="その先に生まれる価値">間接的に、子どもが対話と協力を学ぶ機会を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">同じ6教科とROADMAPを材料に話し、合意した範囲をRecordと専門相談へ引き継ぐ。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>一人が描いた未来を、家族で進められる未来にする。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">話し合い実施率、合意した次の行動、未解決点の整理、相談後の大幅な条件変更。家族全員の同意を自動的に推定しない。</p></div>
+<p class="srcref">参照：I1</p>
+</section>
+<section id="s08">
+<p class="eyebrow">機能 08</p>
+<h1><span class="num">08</span>LIFEConsult</h1>
+<p class="role"><span>役割</span>整理した課題を、適切な専門相談につなぐ。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">人生設計や困りごとに応じて相談分野を整理し、必要な窓口を案内する。本人が選んだ情報と相談目的を引き継ぎ、専門家へ進むまでの手間を減らす。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>相談したい内容を整理する</li><li>分野と窓口を選ぶ</li><li>共有内容と希望を確認する</li><li>専門家との相談を始める。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">多様な相談先を社員へ案内できる。</td><td data-h="その先に生まれる価値">社員の生活上の悩みを、適切な支援へつなげやすくなる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">社員に案内できる支援経路を持つ。</td><td data-h="その先に生まれる価値">専門外の相談にも、次に頼れる相手を提示できる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">誰に何を相談するかが具体的になる。</td><td data-h="その先に生まれる価値">相談先探しで止まらず、一歩を踏み出しやすい。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">共通の課題に合う専門家へつながる。</td><td data-h="その先に生まれる価値">家族だけでは整理しきれない選択を相談できる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">目的と希望が整理された相談を受け取る。</td><td data-h="その先に生まれる価値">必要な専門分野への振り分けと初回準備を進めやすい。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">相談内容を毎回組み立て直す負担を減らす。</td><td data-h="その先に生まれる価値">初回から個別の確認と比較に進みやすくなる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">学びから専門支援への経路を用意する。</td><td data-h="その先に生まれる価値">相談先がわからず支援に届かない場面の改善を目指す。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">LIFEJOURNEYの最終ステップが各種専門窓口とOSMAの受付へつながり、人による対応が始まる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>学びで見つけた課題を、相談できる相手へつなぐ。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">相談希望から受付・初回面談までの到達率、案内先の変更・差し戻し、途中離脱理由。窓口案内と実際の専門対応を区別する。</p></div>
+<p class="srcref">参照：I1、I2</p>
+</section>
+<section id="s09">
+<p class="eyebrow">機能 09</p>
+<h1><span class="num">09</span>ミオ先生</h1>
+<p class="role"><span>役割</span>日常の疑問を受け止め、一人ひとりの次の一歩を支える。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">本人が共有した価値観や暮らし、学び、相談の背景を踏まえて対話する。質問を言葉にする段階から、考えの整理、理解の確認、専門家への相談準備まで伴走する。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>小さな疑問を話す</li><li>背景と希望を整理する</li><li>必要な学びや選択肢を確認する</li><li>本人が次の行動を選ぶ。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が日常的に相談を始められる入口を用意する。</td><td data-h="その先に生まれる価値">支援が必要な本人を、適切な学びや相談へつなげやすくなる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自分の考えや生活上の悩みを整理できる。</td><td data-h="その先に生まれる価値">社員支援でも、専門家と分担する入口を持てる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">人に話す前の曖昧な疑問から相談できる。</td><td data-h="その先に生まれる価値">わからないまま止まる場面を減らし、学習や準備を続けやすい。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家族にどう伝えるか、何を確認するかを整理する。</td><td data-h="その先に生まれる価値">将来について話し始めるきっかけを得られる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">相談者が背景と希望を整理した状態で対応する。</td><td data-h="その先に生まれる価値">事前準備を活かし、個別の比較や専門対応に時間を使いやすい。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">疑問や不安を言葉にして面談へ持ち込む。</td><td data-h="その先に生まれる価値">知りたいことを確認し、納得した選択を進めやすい。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">日常の疑問から支援へつながる機会を広げる。</td><td data-h="その先に生まれる価値">間接的に、悩みを一人で抱えたままにする場面を減らすことを目指す。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">LIFECORE、LIFEJOURNEY、LIFERecord、専門窓口が、同じ本人の理解と希望を軸につながる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>あなたが話してきたことを踏まえて、次の一歩を一緒に考える。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">疑問の解消に関する本人評価、次の行動の実施、必要な専門相談への接続。AIの返答は専門家の診断や確認を代替しない。</p></div>
+<p class="srcref">参照：I1、I2</p>
+</section>
+<section id="s10">
+<p class="eyebrow">機能 10</p>
+<h1><span class="num">10</span>LIFERecord</h1>
+<p class="role"><span>役割</span>本人への理解と支援の経緯を、次の相談へつなぐ。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">価値観、現状、学び、計画、相談の要約を記録し、本人が確認・更新する。共有したい範囲を選び、AIや必要な担当者が、これまでの経緯を踏まえて支援できるようにする。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>学びと希望を記録する</li><li>状況の変化を更新する</li><li>必要な相手へ共有する</li><li>説明を引き継ぎ、次の支援を具体化する。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が継続して使える支援環境を用意する。</td><td data-h="その先に生まれる価値">単発の研修や相談の後も、本人が次の行動を続けやすい。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">支援を長く続ける仕組みを持つ。</td><td data-h="その先に生まれる価値">担当者の交代や時間の経過があっても、支援をつなぎやすい。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">過去の希望や計画を読み返し、修正する。</td><td data-h="その先に生まれる価値">人生の変化に合わせて学びと設計を更新できる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">本人が選んだ計画や相談結果を共有する。</td><td data-h="その先に生まれる価値">前回の話し合いを踏まえて次の対話を進められる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">許可された背景と支援履歴を参照する。</td><td data-h="その先に生まれる価値">面談準備と引き継ぎの負担を減らし、関係を継続しやすい。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">毎回すべてを説明する手間を減らせる。</td><td data-h="その先に生まれる価値">自分の経緯を理解した相談対応を受けやすい。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">本人の意思に基づいて支援の経緯を引き継ぐ。</td><td data-h="その先に生まれる価値">間接的に、支援の分断や重複説明の負担を減らす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">学習記録、家族の合意、相談背景を、人生設計と専門対応の共通の材料として使う。蓄積は本人の利益と継続利用の価値につなげる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>人生への理解を積み重ね、次の相談を、前の続きから始める。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">初回準備時間、重複質問への本人評価、記録更新率、共有した情報の訂正件数。私的記録の企業・本部への自動公開は行わない。</p></div>
+<p class="srcref">参照：I1、I2、I4</p>
+</section>
+<section id="s11">
+<p class="eyebrow">機能 11</p>
+<h1><span class="num">11</span>各種専門相談窓口</h1>
+<p class="role"><span>役割</span>人生設計を、現実の選択と実行へ進める。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">LIFEConsultからつながった相談に対し、住まい、保険、結婚、介護など、必要な分野の専門家が条件確認・比較・提案・実行支援を行う。本人の希望と負担を確認して進める。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>背景と希望を確認する</li><li>条件と選択肢を比較する</li><li>本人・家族が判断する</li><li>手続きや実行、その後の確認へ進む。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が専門的な生活課題に対応できる環境を持つ。</td><td data-h="その先に生まれる価値">本人の生活と就業の両立を支える相談体制になる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">必要分野を担える相手と連携する。</td><td data-h="その先に生まれる価値">社員や自分の相談を、実行に向けて進められる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">学んで整理した課題を専門家に確認する。</td><td data-h="その先に生まれる価値">自分だけでは進めにくい手続きや比較に取り組める。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家族の条件を踏まえた提案を受ける。</td><td data-h="その先に生まれる価値">暮らしに合う選択と役割分担を決めやすくなる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">自社の対応分野と連携先で相談を受け止める。</td><td data-h="その先に生まれる価値">支援の範囲と相談収益の機会を広げられる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">根拠・条件・負担を確かめて選ぶ。</td><td data-h="その先に生まれる価値">将来の暮らしまで考えた判断と実行を支えられる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">教育で見つけた課題を、現場の専門支援へつなぐ。</td><td data-h="その先に生まれる価値">間接的に、備えを実際の暮らしに反映する人を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">専門家に届く前に、本人が学び、希望を整理し、必要に応じて家族と話し合っている。その理解を実行支援に活かす。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>描いた人生を、暮らしの中で実現するための専門家につながる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">相談から具体的行動への到達、本人の納得度、説明後の理解、実行後の確認。成約件数と本人への支援成果を併せて見る。</p></div>
+<p class="srcref">参照：I1、I2</p>
+</section>
+<section id="s12">
+<p class="eyebrow">機能 12</p>
+<h1><span class="num">12</span>REALIZEマーケット</h1>
+<p class="role"><span>役割</span>日々の家計支援を、継続利用と次世代への支援につなげる。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">日用品などの買い物で家計を支え、会員が今日の利用価値を感じられる接点をつくる。余剰在庫などの活用に加え、売上の一部を子どもたちへの支援につなぐ構想を持つ。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>必要な商品を条件と総額で選ぶ</li><li>日々の家計を整える</li><li>サービスを使う理由が続く</li><li>学びや相談を知る接点と、社会への支援機会が増える。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員と家族が日常的に使える家計支援を届ける。</td><td data-h="その先に生まれる価値">福利厚生の利用価値を体験してもらいやすくなる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">社員の暮らしを支える具体的な手段を持つ。</td><td data-h="その先に生まれる価値">人生支援の方針を、身近なサービスとして説明できる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">必要な買い物の負担を見直す。</td><td data-h="その先に生まれる価値">家計の余裕をつくる選択肢を得て、計画に活かせる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家庭で使う商品や購入条件を一緒に確認する。</td><td data-h="その先に生まれる価値">家族も会社の支援を生活の中で感じやすい。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">相談予定のない時期にも利用価値を届ける。</td><td data-h="その先に生まれる価値">企業と会員に継続利用を案内する理由を持てる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">日常のサービスから人生支援の存在を知る。</td><td data-h="その先に生まれる価値">必要な時期に相談先を思い出せる接点になる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">在庫活用と家計支援、子どもたちへの支援をつなぐ。</td><td data-h="その先に生まれる価値">支援が実施されれば、暮らしの利用が次世代への還元になる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">日常の家計支援を、ROADMAPで考えた将来の準備や、LIFEJOURNEYの利用と結びつけて案内できる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>今日の暮らしを支える利用が、未来への準備と、子どもたちへの支援につながる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">継続利用、必要な買い物の総額差、学びへの参加、支援実施額と実施先。送料・数量・不要な購入も含めて家計への効果を見る。</p></div>
+<p class="srcref">参照：I1</p>
+</section>
+<section id="s13">
+<p class="eyebrow">機能 13</p>
+<h1><span class="num">13</span>Bマーク</h1>
+<p class="role"><span>役割</span>人生支援への企業姿勢を、伝わる形にする。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">社員と家族への支援に取り組む企業の姿勢を、社内、採用、対外説明で示す。表示とともに、実際に利用できる学び・相談・家計支援の内容を伝える。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>支援を提供する</li><li>社員の利用につなげる</li><li>取り組みを説明できるようにする</li><li>求職者・家族・地域が企業姿勢を知る。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">人生支援の取り組みを採用や社内案内で説明する。</td><td data-h="その先に生まれる価値">企業を知る人に、働く環境を判断する材料を届けられる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">大切にする価値を具体的な支援とともに表明する。</td><td data-h="その先に生まれる価値">経営の想いを、社内外に一貫して伝えられる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">会社が何を支え、何が利用できるかを知る。</td><td data-h="その先に生まれる価値">支援を利用し、会社の姿勢を実体験で確かめられる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">勤め先の支援内容を知る。</td><td data-h="その先に生まれる価値">家庭でも会社が用意した支援を理解しやすくなる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">地域企業の取り組みを説明し、導入後の利用を支える。</td><td data-h="その先に生まれる価値">RC提案の理由と、企業との継続的な関わりを具体化できる。</td></tr><tr><td data-h="立場">顧客・求職者</td><td data-h="行動・状態の変化">表示の背景にある支援内容を確認する。</td><td data-h="その先に生まれる価値">企業への期待と実際の取り組みを照らして判断できる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">人生支援に取り組む企業を知る機会が増える。</td><td data-h="その先に生まれる価値">取り組みを参考にする企業が増えることを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">表示の裏側に、JOURNEY・AI・Record・専門相談・家計支援という利用内容があることを説明できる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>社員の人生を支える姿勢を、利用できる仕組みとともに社会へ伝える。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">採用時の認知、支援内容の理解、社員への案内到達、利用実態。マーク表示だけで採用・定着の効果を認定したことにはしない。</p></div>
+<p class="srcref">参照：I1</p>
+</section>
+<section id="s14">
+<p class="eyebrow">機能 14</p>
+<h1><span class="num">14</span>潜在ファミリー世帯の即日即決を可能にする営業ノウハウ</h1>
+<p class="role"><span>役割</span>購入を考えていなかったファミリー世帯を、マイホーム購入の即日の意思決定まで導く。</p>
+<div class="lab"><p class="lb">技術の定義</p><p class="tx">大橋氏が自社の強みとして示すのは、潜在顧客への接点づくりから、購入を考えていなかった家族の即日即決までを担う体系的な営業ロジックである。不動産業界24年の経験の中で、自社以外に同等の技術を聞いたことがないという評価を、その具体的な対象と成果とともに記す。<span class="cite">I6</span></p></div>
+<div class="tbl"><table class="t2"><thead><tr><th>比較の条件</th><th>この営業技術で扱うこと</th></tr></thead><tbody><tr><td data-h="比較の条件">面談前の状態</td><td data-h="この営業技術で扱うこと">マイホームの購入を考えていなかった。</td></tr><tr><td data-h="比較の条件">対象</td><td data-h="この営業技術で扱うこと">自ら住むマイホームを選ぶファミリー世帯。</td></tr><tr><td data-h="比較の条件">到達する成果</td><td data-h="この営業技術で扱うこと">その日のうちに購入の意思決定に至る。</td></tr><tr><td data-h="比較の条件">技術の形</td><td data-h="この営業技術で扱うこと">判断に至る過程を体系的な営業ロジックとして持つ。教材・育成へ展開する対象となる。</td></tr><tr><td data-h="比較の条件">独自性の根拠</td><td data-h="この営業技術で扱うこと">大橋氏の24年の現場経験と、同等の体系を他社で聞いたことがないという説明。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">営業担当が、購入意向の形成から意思決定までを扱う手順を学べる。家族が購入の必要性、暮らしとの関係、判断に必要な条件を理解して決断に至る過程を、営業技術として扱う。加盟店が習得する対象は、物件への反響を待つ範囲を越えて、購入を考えていなかった家族の意思決定を支える能力である。具体的な営業ロジックの内容と順序は、既存の教材に基づいて伝える。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>体系的な営業ロジックを学ぶ</li><li>購入を考えていなかった家族と商談できる</li><li>家族が必要性と判断条件を理解する</li><li>即日の購入意思決定に至る場面をつくれる</li><li>加盟店が扱える顧客層と売上機会が広がる。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>活用場面</th><th>具体的に変えること</th><th>そこから生まれる変化</th></tr></thead><tbody><tr><td data-h="活用場面">営業対象の変化</td><td data-h="具体的に変えること">購入を考えていなかったファミリー世帯を、対応できる顧客層に含める。</td><td data-h="そこから生まれる変化">顕在客の反響数に加え、自社の営業能力によって事業機会を広げられる。</td></tr><tr><td data-h="活用場面">商談の変化</td><td data-h="具体的に変えること">購入の必要性を理解し、判断に至る過程を体系的に進める。</td><td data-h="そこから生まれる変化">購入意向がない状態から、即日の意思決定まで支援できる場面が生まれる。</td></tr><tr><td data-h="活用場面">育成の変化</td><td data-h="具体的に変えること">熟練者が持つ営業ロジックを、教材・練習・実戦指導にする。</td><td data-h="そこから生まれる変化">経験者個人の技術を、加盟店の社員が学べる技術へ展開できる。</td></tr><tr><td data-h="活用場面">経営の変化</td><td data-h="具体的に変えること">この技術にRCの接点とOSMAの実行・改善を組み合わせる。</td><td data-h="そこから生まれる変化">潜在ファミリー世帯への営業を、人材育成と日々の管理を伴う事業として育てられる。</td></tr></tbody></table></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が購入を考えていない段階から、住まいの必要性と判断について相談できる。</td><td data-h="その先に生まれる価値">住まいという生活基盤への支援が、社員自身が選択する具体的な行動につながる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">社員の住まいに関する相談を、必要性の整理から意思決定まで扱える担当者へつなげる。</td><td data-h="その先に生まれる価値">社員の人生を支える方針に、具体的な実行を担う体制が加わる。</td></tr><tr><td data-h="立場">社員・営業担当</td><td data-h="行動・状態の変化">購入を考えていなかった家族の意思決定を支える営業ロジックを習得する。</td><td data-h="その先に生まれる価値">対応できる顧客層が広がり、反響数や偶然の物件一致に依存する範囲を小さくできる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">自分たちには関係がないと思っていた住宅購入を、暮らしの選択肢として理解し、判断する。</td><td data-h="その先に生まれる価値">将来の暮らしを具体化し、必要と判断した家族は実行へ進める。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">潜在ファミリー世帯への営業技術を学び、RCの接点で活用する。</td><td data-h="その先に生まれる価値">既存の顕在客市場に加え、自社が対応できる市場を広げ、売上機会をつくれる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">購入を考えていなかった状態から、必要性と判断条件を理解して意思決定する。</td><td data-h="その先に生まれる価値">自分たちに可能な住まいの選択肢を知り、その日の決断につなげられる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">購入意向が明確になる前の家族にも、生活基盤を考え実行する支援が届く。</td><td data-h="その先に生まれる価値">知る機会と判断を支える人の不足によって、住まいの選択肢が見過ごされる場面の改善を目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">核となる営業技術があり、RC・PJ・LIFEJOURNEYが生活者との接点と理解を育てる。教材・ARENA・アオ先生が技術の習得を支え、OSMAが担当・案件・次の行動・振り返り・本部支援を動かす。全機能の価値は、固有の技術を地域の加盟店で展開し、実践から改善できることにある。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>購入を考えていなかったファミリー世帯の、マイホーム購入を即日即決へ導く。現場で磨いた体系的な営業ノウハウを学び、これまで対応できなかった顧客層へ事業を広げる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">面談前の購入意向、ファミリー世帯・自己居住目的の確認、面談日と購入意思決定日、担当者の経験と習得内容、意思決定後の経過を記録する。即日の意思決定、申込、契約の各日付は区別する。複数の担当者・加盟店で同じ条件の実績を示せるほど、技術を伝えて展開できるという強みの裏付けが厚くなる。</p></div>
+<p class="srcref">参照：I2、I3、I5、I6</p>
+</section>
+<section id="s15">
+<p class="eyebrow">機能 15</p>
+<h1><span class="num">15</span>営業マニュアルとプレゼン教材とEラーニング</h1>
+<p class="role"><span>役割</span>潜在ファミリー世帯の即日即決を支える営業ロジックを、組織で学べる形にする。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">聞き方、課題整理、必要性の説明、比較、懸念解消などの手順を、マニュアル・プレゼン書・動画・順序学習で反復する。学ぶ内容と指導の基準を揃える。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>必要な型を学ぶ</li><li>理由と順番を理解する</li><li>演習・実戦で確かめる</li><li>同じ基準で振り返る</li><li>営業育成を繰り返せる。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">共通の手順を学んだ支援担当から説明を受ける。</td><td data-h="その先に生まれる価値">導入時や相談時の説明内容を確認しやすくなる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自分が教えるべき内容を教材と実践指導に分ける。</td><td data-h="その先に生まれる価値">基本説明の反復負担を減らし、個別課題に時間を使える。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">自分の進度で学び直し、質問を整理する。</td><td data-h="その先に生まれる価値">先輩の空き時間だけに依存せず、練習の準備を進められる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">担当者が整理した順番で説明を受ける。</td><td data-h="その先に生まれる価値">何を理解し、何を確認すべきかが見えやすい。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">教育内容と習得条件を揃える。</td><td data-h="その先に生まれる価値">採用後の育成計画と、複数人の立ち上げを組み立てられる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">確認事項や比較の意味を一貫して説明される。</td><td data-h="その先に生まれる価値">担当者ごとの説明の抜けやばらつきの改善につながる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">相談の基礎となる説明手順を現場へ広げる。</td><td data-h="その先に生まれる価値">間接的に、判断を支える説明を受けられる機会を増やす。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">自社が持つ潜在ファミリー世帯への体系的な営業ロジックを教材の核とし、ARENAの練習、アオ先生への質問、OSMAで把握した現場課題に接続する。固有の技術を、次の営業担当へ伝えるための土台になる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>営業の型を、次の一人にも教えられる会社をつくる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">理解確認、実践課題の達成、独り立ちまでの期間、上司の基礎説明時間。視聴完了と実戦での習得を分ける。</p></div>
+<p class="srcref">参照：I3、I4</p>
+</section>
+<section id="s16">
+<p class="eyebrow">機能 16</p>
+<h1><span class="num">16</span>AI Sales ARENA</h1>
+<p class="role"><span>役割</span>実戦前に場面を反復し、改善する行動を具体化する。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">興味喚起、反論、夫婦面談などの場面を練習し、質問・深掘り・説明の順序を振り返る。共通の評価基準に沿って、次に直す行動を絞る。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>苦手な場面を練習する</li><li>改善点を確認する</li><li>同じ場面をやり直す</li><li>実戦で試す</li><li>結果を次の練習に戻す。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">練習を重ねた担当者から導入や活用の説明を受ける。</td><td data-h="その先に生まれる価値">担当者の習熟不足による説明の揺れを減らすことを目指せる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">全場面のロープレ相手を務める負担を分担する。</td><td data-h="その先に生まれる価値">上司は評価基準の確認と重要な実戦指導に注力できる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">苦手な場面を繰り返し練習する。</td><td data-h="その先に生まれる価値">具体的な改善点を持って商談に臨める。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">担当者が双方の希望を聞く練習を重ねる。</td><td data-h="その先に生まれる価値">夫婦・家族の違いを確認した説明につながりやすい。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">育成人数に応じた練習機会を用意する。</td><td data-h="その先に生まれる価値">熟練者の指導時間が限られていても練習量を確保できる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">質問や説明を準備した担当者と相談する。</td><td data-h="その先に生まれる価値">面談が担当者の試行錯誤だけで進む負担を小さくできる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">実戦前に相談対応を練習する仕組みを広げる。</td><td data-h="その先に生まれる価値">間接的に、相談品質の底上げを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">潜在ファミリー世帯の即日意思決定を支える営業ロジックを、興味喚起・懸念への対応・夫婦面談などの場面で練習する。OSMAで把握したつまずき、教材、ARENA、アオ先生、次の実践を一連の育成にする。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>現場でつまずいた場面を、その日の練習と次の改善につなげる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">練習課題の改善、上司が観察した実戦行動、相談者評価。AI評価の上昇だけで営業成果の向上を断定しない。</p></div>
+<p class="srcref">参照：I2、I3、I4</p>
+</section>
+<section id="s17">
+<p class="eyebrow">機能 17</p>
+<h1><span class="num">17</span>アオ先生</h1>
+<p class="role"><span>役割</span>営業の疑問を、準備と改善に使える助言へ変える。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">営業教材や本人が共有した課題をもとに、質問への回答、提案の組み立て、商談準備、振り返りを支える。次に確かめることや使う教材を具体化する。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>現場の疑問を言葉にする</li><li>必要な型と確認事項を得る</li><li>提案を準備する</li><li>実戦後に振り返る</li><li>次の行動を修正する。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">自社の課題を踏まえたRC提案を受ける。</td><td data-h="その先に生まれる価値">利用目的と導入後の動かし方を確認しやすい。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">営業の基礎質問への対応をAIと分担する。</td><td data-h="その先に生まれる価値">重要な判断や難しい案件の指導に時間を配分できる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">疑問をその場で整理し、商談準備を進める。</td><td data-h="その先に生まれる価値">わからない点を放置する場面を減らせる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家族の希望を踏まえた説明準備が進む。</td><td data-h="その先に生まれる価値">自分たちの条件について確認しやすくなる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">提案準備と振り返りの手順を共有する。</td><td data-h="その先に生まれる価値">営業経験の差を補う準備の仕組みを持てる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">確認事項を整理した提案を受ける。</td><td data-h="その先に生まれる価値">限られた面談時間を、比較と判断に使いやすい。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">現場の疑問を教材と専門確認に戻す。</td><td data-h="その先に生まれる価値">間接的に、説明品質を改善する学習習慣を広げる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">自社の体系的な営業ロジックを準備と振り返りに使い、JOURNEYで生まれた相談の背景と、OSMAで確認した営業課題を、許可された範囲で反映する。固有の技術を個々の商談でどう実践するか、学び直す支援になる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>営業の疑問を、次の商談で使える準備に変える。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">準備時間、確認漏れ、同じ失敗の再発、上司への質問の内容。金額・条件・専門判断は根拠を確認して顧客へ伝える。</p></div>
+<p class="srcref">参照：I2、I3、I4</p>
+</section>
+<section id="s18">
+<p class="eyebrow">機能 18</p>
+<h1><span class="num">18</span>PRESIDENT JOURNEYとPRESIDENT Record</h1>
+<p class="role"><span>役割</span>経営者の想いと課題から、RCの導入目的を育てる。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">経営者が自分の歩み、社員への想い、経営上の課題を整理する。本人が共有した言葉をもとに、その企業に合う人生支援の方針とRCの使い方を考える。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>経営者が想いと課題を整理する</li><li>人生支援の意味を自社に置き換える</li><li>導入目的を言葉にする</li><li>社員への案内と利用を進める。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">自社で何のために導入するかを明確にする。</td><td data-h="その先に生まれる価値">社員への案内や運用を、目的に沿って組み立てられる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自分の言葉で社員を支える方針を持つ。</td><td data-h="その先に生まれる価値">導入判断から社内への説明まで、一貫して伝えられる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">経営者が何を支えたいのかを聞ける。</td><td data-h="その先に生まれる価値">利用目的を理解し、支援を受けるきっかけを得られる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">企業が用意する支援の意味を知る。</td><td data-h="その先に生まれる価値">社員を通じて家庭にも利用目的が伝わりやすい。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">経営者の想いを踏まえて提案を準備する。</td><td data-h="その先に生まれる価値">自社に合う理由を話せる法人営業へ進める。</td></tr><tr><td data-h="立場">顧客・相談者</td><td data-h="行動・状態の変化">企業の案内から支援の存在を知る。</td><td data-h="その先に生まれる価値">利用や相談に進む入口を持つ。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">経営者の決心を社員・家族への支援へつなぐ。</td><td data-h="その先に生まれる価値">人生支援に取り組む企業を地域で増やすことを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">PJが法人との接点、LJが社員・家族の利用、Recordが理解、OSMAが次の行動を担う。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>社長の想いから、その会社に必要な人生支援を一緒につくる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">同じPJ登録企業群の面談・導入・利用開始、経営者による案内実施、導入後の社員利用。PJ参加が自動的に契約を生むとは置かない。</p></div>
+<p class="srcref">参照：I2、I3</p>
+</section>
+<section id="s19">
+<p class="eyebrow">機能 19</p>
+<h1><span class="num">19</span>RCの地域企業基盤と3つの収益</h1>
+<p class="role"><span>役割</span>地域への人生支援を、続けられる事業にする。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">地域企業への導入、会員の利用、必要な専門相談を継続する。導入に伴う報酬、月会費に伴う継続報酬、相談・取引に伴う報酬を、契約と実績に応じて得る。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>企業が導入する</li><li>社員・家族に利用を届ける</li><li>必要な相談を支える</li><li>支援への信頼が継続する</li><li>継続収益と相談機会を育てる。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">導入後も利用案内と相談支援を受ける。</td><td data-h="その先に生まれる価値">制度を実際に使う福利厚生として育てられる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">社員への支援を地域の担当者と進める。</td><td data-h="その先に生まれる価値">自社だけで運用を抱えず、利用改善を相談できる。</td></tr><tr><td data-h="立場">社員</td><td data-h="行動・状態の変化">生活の変化に合わせて繰り返し支援を利用する。</td><td data-h="その先に生まれる価値">必要なときに頼れる窓口を持ちやすい。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">社員の入会をきっかけに学びや相談を知る。</td><td data-h="その先に生まれる価値">家庭の人生の節目にも支援につながれる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">導入・継続・相談の収益を組み合わせる。</td><td data-h="その先に生まれる価値">月々の収入の見通しを育て、教育と継続支援に資源を配分できる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">取引予定のない時期にも接点を持つ。</td><td data-h="その先に生まれる価値">相談したいときに、すでに知っている窓口を選べる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">支援を続ける地域事業に収益が生まれる。</td><td data-h="その先に生まれる価値">社会的な役割と事業の持続性を両立することを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">入会企業数の拡大、社員の利用、相談対応、営業育成、収益管理をつなぎ、加盟店が地域で運営できる形にする。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>企業と社員を支える関係を、地域で続く相談基盤と事業に育てる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">企業継続率、会員利用、相談率、報酬と支援原価、契約ごとの収益。会員数・相談数・契約数を同じ数として扱わない。</p></div>
+<p class="srcref">参照：I2、I3、I4</p>
+</section>
+<section id="s20">
+<p class="eyebrow">機能 20</p>
+<h1><span class="num">20</span>OSMAの法人営業管理と相談受付</h1>
+<p class="role"><span>役割</span>届いた接点と相談を、担当者の実際の対応へつなぐ。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">法人接点、PJの案内・面談状況、会員相談の受付を管理する。相談内容、希望連絡方法、未担当、担当者、初回対応の期限を確認し、日々の対応を決める。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>接点・相談を記録する</li><li>未担当や未対応を見つける</li><li>担当と期限を決める</li><li>人が初回対応する</li><li>相談者が次の支援へ進む。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>活用場面</th><th>具体的に変えること</th><th>そこから生まれる変化</th></tr></thead><tbody><tr><td data-h="活用場面">法人の接点</td><td data-h="具体的に変えること">名刺交換、PJ案内、説明希望、次の連絡を記録する。</td><td data-h="そこから生まれる変化">担当者の記憶だけに依存せず、法人との関係を続けられる。</td></tr><tr><td data-h="活用場面">相談の受け渡し</td><td data-h="具体的に変えること">誰が対応するか、いつ連絡するかを決める。</td><td data-h="そこから生まれる変化">担当の曖昧さによる放置を減らす。</td></tr><tr><td data-h="活用場面">初動の確認</td><td data-h="具体的に変えること">受付だけでなく、人による初回対応を確認する。</td><td data-h="そこから生まれる変化">自動返信後に相談が止まっている状態を見つけられる。</td></tr></tbody></table></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">案内した社員の相談が受け付けられる体制を持つ。</td><td data-h="その先に生まれる価値">相談先を用意したことを、実際の対応につなげられる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">連絡・相談が止まっている場所を確認する。</td><td data-h="その先に生まれる価値">対応体制や人員の課題に早く手を打ちやすくなる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">自分が担当する相談と連絡期限を把握する。</td><td data-h="その先に生まれる価値">優先順位を決めやすく、探す・確認する手間を抑えられる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">誰からいつ連絡が来るかを確認できる。</td><td data-h="その先に生まれる価値">相談後に待ち続ける不安の改善につながる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">受付から初動までを一覧で確認する。</td><td data-h="その先に生まれる価値">集めた相談の対応漏れを減らし、営業機会を活かしやすくする。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">希望に沿った連絡と相談案内を受ける。</td><td data-h="その先に生まれる価値">相談した意思が、実際の対応へつながる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">支援への意思表示を人による対応まで追う。</td><td data-h="その先に生まれる価値">相談の受け渡しで支援が途切れる場面を減らすことを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">PJとLJで生まれた接点を、OSMAで担当と期限のある仕事にする。集客側と運営側がつながる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>相談が届いたら、誰が、いつ動くかまで決まる。集まった期待を、実際の支援につなげる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">未担当相談数、人による初動時間、未応答数、期限内対応率。受付通知だけを対応完了にしない。</p></div>
+<p class="srcref">参照：I2、I4</p>
+</section>
+<section id="s21">
+<p class="eyebrow">機能 21</p>
+<h1><span class="num">21</span>OSMAのPIPELINEとNEXT ACTION</h1>
+<p class="role"><span>役割</span>相談が止まる理由と、次に進める行動を見えるようにする。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">面談、提案、比較、意思決定などの段階と、前回の結果、残る課題、担当、期限を記録する。止まっている理由を確認し、連絡、比較資料、家族との確認など、次の対応を決める。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>進捗と残課題が見える</li><li>停滞の理由を確認する</li><li>担当と期限を決めて動く</li><li>必要な比較や確認が進む</li><li>納得した意思決定へつなぐ。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員が相談後も継続した支援を受ける。</td><td data-h="その先に生まれる価値">窓口案内の先にある対応を任せられる環境をつくる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">結果の数字と、結果までの進み方を確認する。</td><td data-h="その先に生まれる価値">受注見込み、人員配置、支援の優先順位を考えやすくなる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">今日の行動と、相手と約束した確認を把握する。</td><td data-h="その先に生まれる価値">案件を頭の中だけで抱えず、計画的に仕事を進められる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">家族で比較したい条件と確認時期を整理する。</td><td data-h="その先に生まれる価値">曖昧なまま急いで決める場面を見直せる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">案件の停滞と担当負荷を確認する。</td><td data-h="その先に生まれる価値">相談件数の増加に合わせ、対応の分担を調整できる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">自分が迷う点に対応した次の説明を受ける。</td><td data-h="その先に生まれる価値">置き去りになった疑問を確認し、判断を進められる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">判断までの支援を段階ごとに続ける。</td><td data-h="その先に生まれる価値">間接的に、説明不足や対応漏れを減らすことを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">人生設計の目的を保ちながら、具体的な専門案件の進行を管理する。止まった原因はアオ先生、ARENA、本部支援にも接続できる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>案件の現在地と、次に進める一手がわかる。相談が増えても、支援の進め方をチームで共有する。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">NEXT設定率、期限超過、段階別滞留、確定案件の成約率と中止理由。本人の検討時間を単なる停滞として急がせない。</p></div>
+<p class="srcref">参照：I2、I4</p>
+</section>
+<section id="s22">
+<p class="eyebrow">機能 22</p>
+<h1><span class="num">22</span>OSMAのRecord連携と引き継ぎと継続支援</h1>
+<p class="role"><span>役割</span>担当者が変わっても、支援の理解と約束をつなぐ。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">本人が共有したLIFERecord、相談・提案の経緯、家族の希望、次の約束を、必要な担当者が確認する。成約後も本人の希望に沿って接点を持ち、暮らしの変化に合わせて支援を更新する。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>背景と約束を記録する</li><li>許可された担当者へ引き継ぐ</li><li>説明や対応の重複を減らす</li><li>取引後の変化を受け止める</li><li>次の相談に応えられる。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">担当者の交代があっても支援を案内できる。</td><td data-h="その先に生まれる価値">特定の担当者だけに依存しない相談体制を持てる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">会社として残す業務記録と共有範囲を管理する。</td><td data-h="その先に生まれる価値">担当変更に伴う引き継ぎや対応停止の負担を抑えられる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">前任者が何を確認し、何を約束したかを知る。</td><td data-h="その先に生まれる価値">背景の聞き直しや再調査を減らし、対応を引き継ぎやすい。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">過去に話し合った希望を必要な担当者へ伝える。</td><td data-h="その先に生まれる価値">担当が変わっても、検討の続きを進めやすい。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">相談の経緯と支援の型を会社の業務として残す。</td><td data-h="その先に生まれる価値">一度の取引の後も、地域の相談先として関係を育てられる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">希望した範囲で経緯を引き継いでもらえる。</td><td data-h="その先に生まれる価値">繰り返し説明する負担を減らし、安心して相談を続けやすい。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">担当者や専門分野の間で支援をつなぐ。</td><td data-h="その先に生まれる価値">暮らしの変化に伴う支援の分断を減らすことを目指せる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">本人中心のLIFERecordと、担当者が動く業務記録をつなぐ。学びから専門対応、成約後までの理解と行動を連続させる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>担当者が変わっても、あなたへの理解と約束を引き継ぐ。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">引き継ぎ時間、同じ説明を求めた回数、継続相談・紹介、共有範囲の適正。業務記録と本人の私的記録を同一視しない。</p></div>
+<p class="srcref">参照：I1、I2、I4</p>
+</section>
+<section id="s23">
+<p class="eyebrow">機能 23</p>
+<h1><span class="num">23</span>OSMAの経営可視化と育成と本部支援</h1>
+<p class="role"><span>役割</span>現場の数字を、具体的な支援と改善に変える。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">RC営業、会員利用、相談、案件進行、日々の行動、学習を照らし合わせる。どこで止まっているかを確認し、教材、練習、同行、運用見直しを選び、支援後に同じ指標で再確認する。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>プロセスごとの事実を確認する</li><li>現場の説明と照合する</li><li>改善する場面を決める</li><li>学習・練習・支援を実施する</li><li>実践と数字の変化を確認する。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>活用場面</th><th>具体的に変えること</th><th>そこから生まれる変化</th></tr></thead><tbody><tr><td data-h="活用場面">接点は多いがPJ登録が少ない</td><td data-h="具体的に変えること">案内の場面と伝え方を確認し、練習課題にする。</td><td data-h="そこから生まれる変化">営業の入口を改善する。</td></tr><tr><td data-h="活用場面">RC導入後の利用が進まない</td><td data-h="具体的に変えること">対象社員数、社内案内、利用開始の障害を確認する。</td><td data-h="そこから生まれる変化">相談数の前提となる実際の利用を育てる。</td></tr><tr><td data-h="活用場面">相談はあるが初動が遅い</td><td data-h="具体的に変えること">担当割当、連絡希望、対応量を確認する。</td><td data-h="そこから生まれる変化">人員・受付運用を見直す。</td></tr><tr><td data-h="活用場面">提案後に進まない</td><td data-h="具体的に変えること">比較条件、家族の合意、残る疑問を確認する。</td><td data-h="そこから生まれる変化">必要な提案支援と練習を選ぶ。</td></tr><tr><td data-h="活用場面">収益や精算がわかりにくい</td><td data-h="具体的に変えること">契約条件、報酬の発生・確定・入出金を区別する。</td><td data-h="そこから生まれる変化">経営判断と本部・加盟店間の確認を具体化する。</td></tr></tbody></table></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">利用が進まない理由を担当者と確かめる。</td><td data-h="その先に生まれる価値">契約後の案内や支援を改善できる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">集客・利用・対応・営業・育成のどこに課題があるかを確認する。</td><td data-h="その先に生まれる価値">資源配分と改善指示を具体化できる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">自分が苦手な場面と、学ぶ内容を確認する。</td><td data-h="その先に生まれる価値">結果への叱責だけで終わらず、次に試す行動を持てる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">運用改善を通じ、必要な支援に届きやすくなる。</td><td data-h="その先に生まれる価値">間接的に、相談対応の質と継続性の向上につながる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">本部と事実を共有し、支援内容と再確認日を決める。</td><td data-h="その先に生まれる価値">加盟後の課題を具体的に相談し、改善を続けられる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">担当の課題に合わせて改善された対応を受ける。</td><td data-h="その先に生まれる価値">相談体験のばらつきや説明不足の改善を目指せる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">現場の経験を教材と運用改善に戻す。</td><td data-h="その先に生まれる価値">間接的に、地域ごとの支援品質を継続的に育てる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">PRESIDENT・LIFE・CUSTOMER・PLANNERの理解を、経営者・生活者・顧客・営業担当への支援に使う。営業を担う人まで支援する設計が、利用者への支援を持続させる。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>売上の手前にある課題が見えるから、学ぶ内容、支える人、次に試す行動が決まる。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">同じ定義・期間・入口集団での進行状況、本部支援後の実践、再発、学習の現場適用。未連携をゼロ実績とせず、前後差だけで因果を断定しない。</p></div>
+<p class="srcref">参照：I2、I4</p>
+</section>
+<section id="s24">
+<p class="eyebrow">機能 24</p>
+<h1><span class="num">24</span>物件供給と専門家ネットワーク</h1>
+<p class="role"><span>役割</span>必要だとわかった支援に、実際の選択肢を用意する。</p>
+<div class="lab"><p class="lb">直接効果</p><p class="tx">地域・取扱範囲・契約に応じた物件や専門家と連携し、本人が必要とする比較や実行を進める。加盟店が対応できる業務と連携先の役割を整理する。</p></div>
+<div class="lab chain"><p class="lb">変化のつながり</p><ol class="steps"><li>人生設計から必要な支援が見える</li><li>対応できる物件・専門家を確認する</li><li>条件を比較する</li><li>適切な担当が実行を支える。</li></ol></div>
+<div class="tbl"><table class="t3"><thead><tr><th>立場</th><th>行動・状態の変化</th><th>その先に生まれる価値</th></tr></thead><tbody><tr><td data-h="立場">入会企業</td><td data-h="行動・状態の変化">社員へ案内できる支援分野を具体化する。</td><td data-h="その先に生まれる価値">相談窓口の存在を、実際の選択肢につなげられる。</td></tr><tr><td data-h="立場">経営者</td><td data-h="行動・状態の変化">自社の専門外を補う連携先を持つ。</td><td data-h="その先に生まれる価値">社員支援の範囲を、連携によって広げられる。</td></tr><tr><td data-h="立場">LMP社員</td><td data-h="行動・状態の変化">提案可能な物件や専門分野を確認する。</td><td data-h="その先に生まれる価値">相談を受けた後の調査・提案を進めやすくなる。</td></tr><tr><td data-h="立場">家族</td><td data-h="行動・状態の変化">条件に合う候補を並べて検討する。</td><td data-h="その先に生まれる価値">暮らしの希望を、現実の選択肢と照らし合わせられる。</td></tr><tr><td data-h="立場">LMP加盟店</td><td data-h="行動・状態の変化">営業育成と接点づくりに、供給・専門対応を組み合わせる。</td><td data-h="その先に生まれる価値">対応範囲を広げ、自社ですべてを内製する負担を抑えられる。</td></tr><tr><td data-h="立場">顧客</td><td data-h="行動・状態の変化">自分の希望に対応する候補と条件を知る。</td><td data-h="その先に生まれる価値">理解した必要性を、実際の比較・実行へ移せる。</td></tr><tr><td data-h="立場">社会</td><td data-h="行動・状態の変化">地域の専門資源と生活者の課題を結びつける。</td><td data-h="その先に生まれる価値">間接的に、支援を実行できる地域のつながりを育てる。</td></tr></tbody></table></div>
+<div class="lab"><p class="lb">他機能と連動する強み</p><p class="tx">教育、相談集客、営業育成、OSMAの運営に、実行するための供給と専門対応が接続する。</p></div>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>学びで見えた必要性に、現実の選択肢と実行する人を用意する。</blockquote></div>
+<div class="lab"><p class="lb">強みを実証する指標</p><p class="tx">対応可能分野、相談から候補提示までの時間、連携完了、本人の満足度。全地域で同じ供給や条件があるとは置かない。</p></div>
+<p class="srcref">参照：I3</p>
+</section>
+<section id="s25">
+<p class="eyebrow">CHAPTER 25</p>
+<h1><span class="num">25</span>複数の機能がつながることで生まれる強み</h1>
+<p>単体の機能の効果に加え、前の機能で生まれた理解や希望を、次の行動に使えることが重要になる。</p>
+<div class="tbl"><table class="t4"><thead><tr><th>組み合わせ</th><th>効果のつながり</th><th>事業と生活に生まれる変化</th><th>強みとして語る言葉</th></tr></thead><tbody><tr><td data-h="組み合わせ">LIFECORE × ミオ先生 × LIFERecord</td><td data-h="効果のつながり">本人の傾向と背景を理解し、日常の対話と学習に反映する。</td><td data-h="事業と生活に生まれる変化">自己理解が一度の結果確認を越えて、職場・家族・人生設計に使われる。</td><td data-h="強みとして語る言葉">一人ひとりへの理解が、日々の支援に生きる。</td></tr><tr><td data-h="組み合わせ">Check42 × Academy42 × ROADMAP</td><td data-h="効果のつながり">課題を確かめ、必要な知識を学び、自分の計画にする。</td><td data-h="事業と生活に生まれる変化">学習の目的と次の行動がつながり、備えを始める理由が生まれる。</td><td data-h="強みとして語る言葉">学ぶ理由と、学んだ先の行動がつながっている。</td></tr><tr><td data-h="組み合わせ">ROADMAP × Meeting × Consult</td><td data-h="効果のつながり">本人の希望と家族の条件を整理し、専門家へつなぐ。</td><td data-h="事業と生活に生まれる変化">初回面談から目的と比較条件を確認し、家族の納得を支えられる。</td><td data-h="強みとして語る言葉">家族で考えた未来を、実行するための相談へ。</td></tr><tr><td data-h="組み合わせ">マーケット × JOURNEY × ROADMAP</td><td data-h="効果のつながり">日常の家計支援と、将来の準備を結びつける。</td><td data-h="事業と生活に生まれる変化">今日使う価値があり、未来について学ぶ接点も続けられる。</td><td data-h="強みとして語る言葉">今日の暮らしを支えながら、未来の準備を育てる。</td></tr><tr><td data-h="組み合わせ">Bマーク × 支援の実態 × 社内案内</td><td data-h="効果のつながり">利用できる仕組みと、企業の姿勢を一緒に伝える。</td><td data-h="事業と生活に生まれる変化">社員・家族・求職者が、企業の取り組みを具体的に理解できる。</td><td data-h="強みとして語る言葉">社員を支える姿勢を、利用できる仕組みで伝える。</td></tr><tr><td data-h="組み合わせ">RC × 潜在ファミリー営業 × LIFEJOURNEY</td><td data-h="効果のつながり">企業を通じて購入検討前の家族に届き、学びと対話に、即日の購入意思決定まで支える営業技術を接続する。</td><td data-h="事業と生活に生まれる変化">加盟店は、接点の拡大と対応できる顧客層の拡大を同時に進められる。</td><td data-h="強みとして語る言葉">購入を考えていなかった家族の意思決定を支える技術を、地域へ届ける。</td></tr><tr><td data-h="組み合わせ">JOURNEY × Record × OSMA × 専門家</td><td data-h="効果のつながり">相談の背景を引き継ぎ、担当・期限・次の行動を決める。</td><td data-h="事業と生活に生まれる変化">集客から実際の対応までを、チームの日々の仕事として動かせる。</td><td data-h="強みとして語る言葉">生まれた相談を、具体的な支援までつなぐ。</td></tr><tr><td data-h="組み合わせ">OSMA × 教材 × ARENA × アオ先生 × 本部</td><td data-h="効果のつながり">現場のつまずきを練習に変え、実践で再確認する。</td><td data-h="事業と生活に生まれる変化">支援する営業担当が育ち、加盟店の対応品質を継続して改善できる。</td><td data-h="強みとして語る言葉">顧客を支える人まで、育て続ける仕組みがある。</td></tr><tr><td data-h="組み合わせ">導入・継続・相談収益 × 継続支援</td><td data-h="効果のつながり">収益と支援原価を把握し、教育・人員・運用へ配分する。</td><td data-h="事業と生活に生まれる変化">人生支援を地域で続けられる事業に育てる。</td><td data-h="強みとして語る言葉">支援を続けることが、事業を育てる力になる。</td></tr></tbody></table></div>
+</section>
+<section id="s26">
+<p class="eyebrow">CHAPTER 26</p>
+<h1><span class="num">26</span>会社の経営成果まで説明する</h1>
+<p>「役に立つ」の先を説明するには、どの行動や負担が変わり、どの経営指標につながるかを示す。次の関係は検証する仮説であり、導入だけで成果が決まるものではない。</p>
+<div class="tbl"><table class="t4"><thead><tr><th>起点となる効果</th><th>現場で起きる変化</th><th>会社にとっての意味</th><th>社員・顧客・社会への波及</th></tr></thead><tbody><tr><td data-h="起点となる効果">LIFECOREで伝え方が具体化する</td><td data-h="現場で起きる変化">再説明・確認漏れ・手戻りを減らす。</td><td data-h="会社にとっての意味">管理職や社員の時間を、育成や顧客対応へ配分できる。</td><td data-h="社員・顧客・社会への波及">社員は働きやすく、顧客は丁寧な対応を受ける余地が生まれる。</td></tr><tr><td data-h="起点となる効果">LIFECOREを育成に使う</td><td data-h="現場で起きる変化">本人の希望と行動を踏まえて指導・役割を調整する。</td><td data-h="会社にとっての意味">活躍と定着を支え、採用・再教育負担の改善を目指せる。</td><td data-h="社員・顧客・社会への波及">人を活かす職場を増やす方向につながる。</td></tr><tr><td data-h="起点となる効果">人生の課題を早めに相談する</td><td data-h="現場で起きる変化">本人が必要な制度・専門家を知り、準備を始める。</td><td data-h="会社にとっての意味">生活事情と仕事の両立を支えられる。</td><td data-h="社員・顧客・社会への波及">家族も相談や準備の機会を持てる。</td></tr><tr><td data-h="起点となる効果">家族で条件を話し合う</td><td data-h="現場で起きる変化">面談前に共通条件と未解決点が見える。</td><td data-h="会社にとっての意味">提案のやり直しを抑え、必要な比較へ時間を使える。</td><td data-h="社員・顧客・社会への波及">顧客の納得と家族の意思を尊重しやすくなる。</td></tr><tr><td data-h="起点となる効果">マーケットが日常の利用価値をつくる</td><td data-h="現場で起きる変化">会員がサービスに触れる機会が続く。</td><td data-h="会社にとっての意味">導入後の案内と利用促進を具体化できる。</td><td data-h="社員・顧客・社会への波及">家計支援と、必要時の相談先認知につながる。</td></tr><tr><td data-h="起点となる効果">潜在ファミリー世帯の即日即決を支える技術を持つ</td><td data-h="現場で起きる変化">購入を考えていなかった家族との商談を、必要性の理解から意思決定まで進める。</td><td data-h="会社にとっての意味">対応できる顧客層と売上機会が広がる。即日の意思決定が再現される範囲では、面談後の検討期間や追客工数も変わり得る。</td><td data-h="社員・顧客・社会への波及">営業担当が扱える商談が増え、家族は気づいていなかった住まいの選択肢を実行へ移せる。</td></tr><tr><td data-h="起点となる効果">営業育成を反復できる</td><td data-h="現場で起きる変化">教材・練習・実戦を共通の基準で回す。</td><td data-h="会社にとっての意味">人員を増やす際の育成方法と必要時間を計画できる。</td><td data-h="社員・顧客・社会への波及">営業担当の成長が顧客の相談品質に反映される。</td></tr><tr><td data-h="起点となる効果">OSMAで初動を追う</td><td data-h="現場で起きる変化">未担当・未対応に気づいて対応を始める。</td><td data-h="会社にとっての意味">獲得済みの相談が対応漏れで失われる場面を減らせる。</td><td data-h="社員・顧客・社会への波及">相談した人に、人による対応を届けられる。</td></tr><tr><td data-h="起点となる効果">OSMAで停滞理由を確認する</td><td data-h="現場で起きる変化">比較・家族確認・専門確認など、次の行動が決まる。</td><td data-h="会社にとっての意味">案件の見通しと人員配分を考えやすくなる。</td><td data-h="社員・顧客・社会への波及">顧客の残る疑問に対応できる。</td></tr><tr><td data-h="起点となる効果">業務記録を引き継ぐ</td><td data-h="現場で起きる変化">担当交代時の確認と聞き直しを減らす。</td><td data-h="会社にとっての意味">特定担当者への依存と引き継ぎ負担を抑える。</td><td data-h="社員・顧客・社会への波及">顧客は検討の続きを進められる。</td></tr><tr><td data-h="起点となる効果">3つの収益と支援原価を把握する</td><td data-h="現場で起きる変化">導入・継続・相談ごとの収益性を確認する。</td><td data-h="会社にとっての意味">収益が原価を上回る範囲で、採用・給与・教育・継続支援へ配分できる。</td><td data-h="社員・顧客・社会への波及">地域で人生支援を続ける体制を育てられる。</td></tr></tbody></table></div>
+</section>
+<section id="s27">
+<p class="eyebrow">CHAPTER 27</p>
+<h1><span class="num">27</span>6者それぞれの変化を深く語る</h1>
+<h2 class="sub">入会企業</h2>
+<p>LIFECOREが人を理解する材料をつくり、JOURNEYが人生を学ぶ機会を届ける。ミオ先生と専門窓口が日常の疑問から実行を支え、マーケットが生活の中で利用価値を届ける。企業は社員の仕事と生活を支える環境を持ち、その具体的な取り組みをBマークとともに採用や社内案内で説明できる。</p>
+<p>語る強みは「社員を大切にしたいという方針を、本人と家族が利用できる仕組みにする」。定着・採用・生産性への影響は、実際の利用と現場の行動変化から確かめる。</p>
+<h2 class="sub">経営者</h2>
+<p>自分自身も学び、考え、人生設計を持ちながら、社員への想いを支援の方針にする。人を理解する対話、AI、専門家、地域の担当者と役割を分担し、支援を続けられる体制を持つ。LMP経営者には、これに営業育成、相談の進行管理、本部支援、収益管理が加わる。</p>
+<p>語る強みは「経営者の想いを実行する体制と、経営者自身も支えられる環境を持てる」。</p>
+<h2 class="sub">社員</h2>
+<p>自分を知り、時代と未来の出来事を学び、備えを確かめ、必要な知識と計画を持つ。迷ったときはミオ先生と整理し、家族と話し、専門家へ進める。今日の暮らしと長い人生の準備を同じサービスの中で考えられる。</p>
+<p>語る強みは「人生を自分で選ぶ力と、動くために頼れる支援がある」。LMPの営業担当には、そのうえで学ぶ・練習する・質問する・実践する・振り返る環境がある。</p>
+<h2 class="sub">家族</h2>
+<p>社員が得た学びと、家庭で使える家計支援が届く。希望や備えを話す共通の材料を持ち、家族の違いを確認して、必要な相談と行動へ進む。大人の判断や対話の経験を、子どもたちが暮らしの中で学ぶ機会にもなる。</p>
+<p>語る強みは「会社から届く支援が、家族で未来を考える力と、日々の暮らしの支えになる」。</p>
+<h2 class="sub">LMP加盟店</h2>
+<p>購入を考えていなかったファミリー世帯の、マイホーム購入を即日即決へ導く体系的な営業ノウハウを学べる。この技術によって対応できる顧客層を広げ、RC・PJ・LIFEJOURNEYで地域企業と生活者への接点を育てる。教材・ARENA・アオ先生で社員の習得を支え、OSMAで案件・行動・振り返り・育成を管理する。</p>
+<p>語る強みは「購入を考えていなかった家族の即日意思決定を支える技術と、その技術を自社の社員が学び、地域で実践するための仕組みを持てる」。技術の習得と実践が進むほど、加盟店は顕在客の反響に加えて、自社の営業力で事業機会を広げられる。</p>
+<h2 class="sub">社会</h2>
+<p>企業が若いうちから働く人と関わり、家庭と地域へ学びや相談を届ける。問題が深刻になる前の準備と、必要な専門支援を広げる。マーケットの利用を子どもたちへの支援へつなぐ構想も持つ。</p>
+<p>語る強みは「大人が人生を整える力を持ち、地域で支援が続き、子どもたちに安心と希望をつなぐ」。子どもの幸福や社会課題の改善は長期目標として位置づけ、短期の利用実績だけで達成を主張しない。</p>
+</section>
+<section id="s28">
+<p class="eyebrow">CHAPTER 28</p>
+<h1><span class="num">28</span>固有の営業技術と、周辺機能の比較を整理する</h1>
+<h2 class="sub">営業技術を比較する条件</h2>
+<p>今回の強みは、「購入を考えていなかった」「自ら住むマイホームを選ぶファミリー世帯」「即日の購入意思決定」「体系的な営業ロジック」という条件で捉える。大橋氏は、不動産業界24年の経験の中で、同等の技術を自社以外に聞いたことがないと説明している。<span class="cite">I6</span></p>
+<p>購入意向がある顧客が、希望に合う物件を見つけて即決する場面と、購入を考えていなかった家族がその日に購入を決断する場面では、営業が扱う判断の過程が異なる。後者を体系として持つことが、ここで定義するLMPの営業技術の核になる。</p>
+<h2 class="sub">先に確認した公開情報から分かる範囲</h2>
+<div class="tbl"><table class="t3"><thead><tr><th>比較領域</th><th>確認できた取り組み</th><th>比較によって確認できる範囲</th></tr></thead><tbody><tr><td data-h="比較領域">性格・相互理解</td><td data-h="確認できた取り組み">ミツカリは、性格や相性の把握、面接、配属、コミュニケーション支援を案内している。<span class="cite">E1</span></td><td data-h="比較によって確認できる範囲">LIFECOREに隣接する機能の比較材料。潜在ファミリー世帯への即日即決の営業技術を示す情報ではない。</td></tr><tr><td data-h="比較領域">福利厚生・人生設計・相談</td><td data-h="確認できた取り組み">リロクラブは優待、学習、ライフプラン、適性検査などを案内し、会員向けの住まいとお金の相談もある。[E2、E5]</td><td data-h="比較によって確認できる範囲">RCの学び・相談に隣接する取り組みの比較材料。同じ条件の営業技術の存在は、この公開情報では確認していない。</td></tr><tr><td data-h="比較領域">企業経由の住宅支援</td><td data-h="確認できた取り組み">ミサワホームは取引企業の従業員向けに持ち家取得支援の制度を案内している。<span class="cite">E3</span></td><td data-h="比較によって確認できる範囲">企業経由の住宅支援があることを確認できる。購入を考えていなかったファミリー世帯を、体系的なロジックで即日意思決定へ導く技術とは比較条件が異なる。</td></tr><tr><td data-h="比較領域">不動産顧客管理</td><td data-h="確認できた取り組み">いえらぶCLOUDはシナリオ配信、LINE物件提案、顧客行動の把握などを案内している。<span class="cite">E4</span></td><td data-h="比較によって確認できる範囲">OSMAに隣接する顧客管理機能の比較材料。同じ対象・開始状態・成果を満たす営業技術を示したものではない。</td></tr></tbody></table></div>
+<p>前版で示した企業経由の住宅支援や追客機能の事例は、今回定義した営業技術と同等の技術が他社にあるという根拠にはならない。これらの比較を理由に、REALIZEの独自性を機能の組み合わせだけへ置き換えることは適切でない。</p>
+<p>「唯一無二」という評価の出所は大橋氏の24年の現場経験である。上記の公開情報確認は、全国の営業技術を網羅した調査ではない。自社の技術の内容・実績と、創業者の経験に基づく独自性の評価を、それぞれ具体的に伝える。</p>
+<h2 class="sub">ブルーオーシャンの意味を具体化する</h2>
+<p>ここでいうブルーオーシャンは、購入を考えていなかったファミリー世帯に対して、購入意向の形成から即日の意思決定までを扱える営業能力によって開く市場である。LMP加盟店は、その技術を学ぶことで、自社が対応できる顧客層を広げられる。</p>
+<p>RC・PJ・LIFEJOURNEYは、その技術を届ける接点と理解を育てる。教材・ARENA・アオ先生は技術の習得を支え、OSMAは現場での実行と改善を支える。固有の営業技術が市場を開く力となり、全機能の連動が地域で展開する力となる。</p>
+<div class="say"><p class="lb">営業で語る言葉</p><blockquote>購入を考えていなかったファミリー世帯の、マイホーム購入を即日即決へ導く。その体系的な営業ノウハウを自社の社員が学び、REALIZECLUBの接点で実践し、OSMAで改善を続ける。自社が対応できる市場を、営業技術から広げていく。</blockquote></div>
+<h2 class="sub">強く語るために積み上げる根拠</h2>
+<div class="tbl"><table class="t2"><thead><tr><th>強み</th><th>具体的に示す根拠</th></tr></thead><tbody><tr><td data-h="強み">潜在ファミリー世帯の即日の購入意思決定を支える</td><td data-h="具体的に示す根拠">面談前に購入を考えていなかったこと、自己居住の家族世帯であること、面談日と意思決定日、用いた営業手順を示す事例。</td></tr><tr><td data-h="強み">体系的な営業ロジックを持つ</td><td data-h="具体的に示す根拠">各段階の目的・進め方・確認事項を記した教材と、実際の商談との対応。</td></tr><tr><td data-h="強み">技術を加盟店へ伝えられる</td><td data-h="具体的に示す根拠">複数の担当者・加盟店の習得過程と、同じ条件で確認した実戦結果。</td></tr><tr><td data-h="強み">学びが行動につながる</td><td data-h="具体的に示す根拠">同じ利用者について、課題確認、学習、計画、実際の行動を追った事例。</td></tr><tr><td data-h="強み">人への理解が引き継がれる</td><td data-h="具体的に示す根拠">本人が共有した要約が、次の面談・提案でどう使われたか。</td></tr><tr><td data-h="強み">本部支援が具体的</td><td data-h="具体的に示す根拠">課題の確認、支援内容、実践、再確認の経緯。</td></tr><tr><td data-h="強み">人生支援が事業として続く</td><td data-h="具体的に示す根拠">導入・継続・相談の収益、提供原価、企業継続と利用の実績。</td></tr><tr><td data-h="強み">社会への還元がある</td><td data-h="具体的に示す根拠">支援先・実施内容・金額・受領確認など、実行の記録。</td></tr></tbody></table></div>
+</section>
+<section id="s29">
+<p class="eyebrow">CHAPTER 29</p>
+<h1><span class="num">29</span>真似しにくさをつくる要素</h1>
+<p>既に現場で持つ営業ノウハウと、その技術を地域の加盟店へ展開するための設計を区別する。大橋氏が固有の技術として示すのは、潜在ファミリー世帯を即日の購入意思決定へ導く体系的な営業ロジックである。<span class="cite">I6</span> 教材、AI、企業との接点、OSMAの連動は、この技術を学び実践する人と地域を広げる仕組みになる。</p>
+<ol class="pts"><li><strong>生活者を理解する教育設計。</strong> 6教科と8ステップを、本人が自分の人生として考える順番にする。</li><li><strong>潜在ファミリー世帯の即日即決を可能にする体系的な営業ロジック。</strong> 購入を考えていなかった家族の、必要性の理解からその日の意思決定までを担う現場の技術を持つ。これがLMPの中核となる。</li><li><strong>日常から関係を続ける仕組み。</strong> AIとの対話、マーケットの利用、学び直し、人生の節目の相談をつなぐ。</li><li><strong>本人の意思に基づく理解の蓄積。</strong> 共有された記録を支援に使い、時間が経っても話の続きを始められる。</li><li><strong>営業担当と加盟店を育てる運用。</strong> 教材、練習、実戦、本部支援を、現場の課題に合わせて動かす。</li><li><strong>地域で実行する体制と経済性。</strong> 企業との関係、専門家・供給網、収益と支援原価を組み合わせる。</li></ol>
+<p>中核となる営業技術の具体性と、それを社員・加盟店へ伝えて実践する力の両方が、真似しにくさを支える。実際の習得・商談・改善の記録が重なるほど、その強みを具体的に説明できる。</p>
+</section>
+<section id="s30">
+<p class="eyebrow">CHAPTER 30</p>
+<h1><span class="num">30</span>効果を実証する確認指標</h1>
+<h2 class="sub">測る対象と期間を揃える</h2>
+<p>法人、社員、家族、相談、案件は単位が違う。たとえば企業数に社員数を掛けた値を、そのまま相談件数や契約数としない。同じ入口集団を一定期間追い、観測中の対象を分ける。</p>
+<div class="tbl"><table class="t3"><thead><tr><th>確認する変化</th><th>指標の例</th><th>確認するときの要点</th></tr></thead><tbody><tr><td data-h="確認する変化">働き方・相互理解</td><td data-h="指標の例">再説明・手戻り、面談合意の実施、本人の相互理解評価</td><td data-h="確認するときの要点">部署、業務量、観測期間も確認する。</td></tr><tr><td data-h="確認する変化">人生の学び</td><td data-h="指標の例">対象課題の理解確認、学習後の計画・実行</td><td data-h="確認するときの要点">視聴・ログインと理解・実行を区別する。</td></tr><tr><td data-h="確認する変化">家族との共有</td><td data-h="指標の例">話し合い実施、合意した行動、本人・家族の納得</td><td data-h="確認するときの要点">共有しない意思も尊重する。</td></tr><tr><td data-h="確認する変化">企業への導入</td><td data-h="指標の例">PJ登録企業群の面談・契約・利用開始</td><td data-h="確認するときの要点">各段階を同じ企業群で追う。</td></tr><tr><td data-h="確認する変化">会員への到達</td><td data-h="指標の例">対象社員の登録、社員・家族別の利用</td><td data-h="確認するときの要点">人数の重複、契約席数との違いを確認する。</td></tr><tr><td data-h="確認する変化">相談への到達</td><td data-h="指標の例">利用者の相談希望、受付、初回面談</td><td data-h="確認するときの要点">相談したユニーク人数と相談件数を分ける。</td></tr><tr><td data-h="確認する変化">対応の実行</td><td data-h="指標の例">未担当、未応答、人による初動時間、期限超過</td><td data-h="確認するときの要点">自動返信を人の初動に数えない。</td></tr><tr><td data-h="確認する変化">提案と意思決定</td><td data-h="指標の例">段階別滞留、確定案件の成約・終了理由、本人の納得</td><td data-h="確認するときの要点">進行中の案件を分母に混ぜて率を歪めない。</td></tr><tr><td data-h="確認する変化">潜在ファミリー世帯の即日意思決定</td><td data-h="指標の例">面談前の購入意向、世帯・居住目的、面談日、購入意思決定日、担当者、意思決定後の経過</td><td data-h="確認するときの要点">同じ開始条件の面談全体を分母とする。購入意思決定・申込・契約の日付を区別する。</td></tr><tr><td data-h="確認する変化">営業育成</td><td data-h="指標の例">練習後の実戦行動、理解、独り立ちまでの期間、複数担当者での実績</td><td data-h="確認するときの要点">評価基準と対象者を揃え、技術の習得と実戦での再現を確認する。</td></tr><tr><td data-h="確認する変化">事業の持続性</td><td data-h="指標の例">企業継続、確定報酬、支援原価、入出金</td><td data-h="確認するときの要点">売買価格や保険料を加盟店の収益にしない。</td></tr><tr><td data-h="確認する変化">家計支援と社会還元</td><td data-h="指標の例">必要な商品の総額差、支援実施額と内容</td><td data-h="確認するときの要点">不要な購入を節約と数えず、支援予定と実施を分ける。</td></tr></tbody></table></div>
+<p>利用開始前と開始後の比較には、対象数、期間、業務・季節の変化を添える。可能なら、条件の近い導入時期の異なる集団とも比較する。差が出た理由を本人や現場への確認と合わせて説明することで、強みを実績として語れるようになる。</p>
+</section>
+<section id="s31">
+<p class="eyebrow">CHAPTER 31</p>
+<h1><span class="num">31</span>提案の中心に置く言葉</h1>
+<h2 class="sub">入会企業向け</h2>
+<div class="say solo"><blockquote>社員一人ひとりを理解し、人生を学ぶ機会と、暮らしを支える相談先を届ける。家族まで支援が届く仕組みを、御社の福利厚生と経営の中につくります。</blockquote></div>
+<h2 class="sub">LMP加盟店向け</h2>
+<div class="say solo"><blockquote>購入を考えていなかったファミリー世帯の、マイホーム購入を即日即決へ導く。現場で磨いた体系的な営業ノウハウを、教材・AI・反復練習で加盟店に届けます。REALIZECLUBが地域の企業・社員・家族との接点を育て、OSMAが日々の実行と改善を支える。その技術を、自社の社員が学び、地域で実践する事業をつくります。</blockquote></div>
+<h2 class="sub">全体を説明する言葉</h2>
+<div class="say solo"><blockquote>REALIZECLUBが人の人生に学びと支援を届け、LMPが地域で具体的な相談に応え、OSMAがその支援と人材育成を日々の仕事にする。一人への理解が家族の安心へ広がり、支援を続ける地域事業を育て、子どもたちの未来へ希望をつないでいきます。</blockquote></div>
+</section>
+<section id="s32">
+<p class="eyebrow">CHAPTER 32</p>
+<h1><span class="num">32</span>参照資料</h1>
+<h2 class="sub">本人の構想と内部資料</h2>
+<ul class="refs"><li><strong>I1</strong> REALIZECLUB_Booklet_32P.pdf。全体像、8ステップ、ミオ先生、LIFERecord、専門相談、マーケット、Bマーク。</li><li><strong>I2</strong> REALIZE_OSMA_加盟店導入パンフ_ミオ修正版.pdf。法人営業、相談受付、案件・次の行動、Record連携、育成、本部支援の設計。確認版2。</li><li><strong>I3</strong> LMP_CLOSER_SYSTEM_FUNCTION_BOOK_28P_MASTER.pptx。潜在顧客営業、教材、ARENA、アオ先生、PJ・LJ、物件供給の構想。確認版2。</li><li><strong>I4</strong> REALIZE_OSMA_本部加盟店管理_追加設計書_v0.1_20260910.docx。指標、教育連携、本人の共有、本部支援、契約・精算の追加設計。</li><li><strong>I5</strong> REALIZE_OS_REAL_ESTATE_TRANSFORMATION_2026_MASTER.pptx。RC・LMP・OSMAの役割、潜在顧客への接点、営業育成、収益モデル。確認版3。</li><li><strong>I6</strong> 大橋氏による本会話での説明（2026年9月11日）。購入を考えていなかったファミリー世帯のマイホーム購入を即日即決へ導く、体系的な営業ロジックを自社が持つ。不動産業界24年の経験で、自社以外に同等の技術を聞いたことがなく、全国的に唯一無二との評価。本人の現場経験と自社技術についての説明であり、本書が実施した全国調査ではない。</li><li>本会話で合意した6教科、二大生活基盤、LIFEJOURNEYの正式な8機能、対象となる6者と顧客への変化。</li></ul>
+<h2 class="sub">比較のために確認した公式情報</h2>
+<p>確認日：2026年9月11日。各社の成果主張をREALIZEの効果の根拠として転用しない。確認したのは、該当する機能・取り組みが存在することと、その公開された説明である。</p>
+<ul class="refs"><li><strong>E1</strong> <a href="https://mitsucari.com/services/personality/function">ミツカリ 分析機能一覧</a></li><li><strong>E2</strong> <a href="https://www.reloclub.jp/">リロクラブ 公式サービス案内</a></li><li><strong>E3</strong> <a href="https://www.misawa.co.jp/houjin/csn/index.html">ミサワホーム お取引企業の皆様へ</a></li><li><strong>E4</strong> <a href="https://www.ielove-group.jp/news/detail-376">いえらぶGROUP 追客自動化とLINE物件提案</a>　公表日2021年10月4日。</li><li><strong>E5</strong> <a href="https://www.fukuri.jp/lp/search/7018148.html">福利厚生倶楽部 RELO FP相談 住まいとお金のクリニック</a></li></ul>
+</section>
+
+<div class="endmark">
+  <p class="m">REALIZE CLUB × LMP</p>
+  <p class="c">強みを説明するための詳細定義</p>
+  <p class="s">2026年9月11日　改訂 v0.3　／　大橋孝行 著　／　株式会社REALIZE OS</p>
+</div>
+
+</main>
+</div>
+
+<button class="topbtn" id="topbtn" type="button" aria-label="ページ先頭へ">&#8593;</button>
+
+<div id="tocpanel" role="dialog" aria-modal="true" aria-label="目次" aria-hidden="true">
+  <div class="hd">
+    <p><small>CONTENTS</small>目次</p>
+    <button class="close" id="tocclose" type="button" aria-label="目次を閉じる">&#215;</button>
+  </div>
+  <div class="toc" id="toc-panel"></div>
+</div>
+
+<script>
+window.__CH__ = [{"no": "", "id": "front", "title": "はじめに", "lvl": 1, "part": false}, {"no": "", "id": "part", "title": "機能別の効果と変化", "lvl": 1, "part": true}, {"no": "01", "id": "s01", "title": "LIFECORE", "lvl": 2, "part": false}, {"no": "02", "id": "s02", "title": "LIFESHIFT", "lvl": 2, "part": false}, {"no": "03", "id": "s03", "title": "LIFEEventCheck", "lvl": 2, "part": false}, {"no": "04", "id": "s04", "title": "LIFECheck42", "lvl": 2, "part": false}, {"no": "05", "id": "s05", "title": "LIFEAcademy42", "lvl": 2, "part": false}, {"no": "06", "id": "s06", "title": "LIFEROADMAP", "lvl": 2, "part": false}, {"no": "07", "id": "s07", "title": "LIFEMeeting", "lvl": 2, "part": false}, {"no": "08", "id": "s08", "title": "LIFEConsult", "lvl": 2, "part": false}, {"no": "09", "id": "s09", "title": "ミオ先生", "lvl": 2, "part": false}, {"no": "10", "id": "s10", "title": "LIFERecord", "lvl": 2, "part": false}, {"no": "11", "id": "s11", "title": "各種専門相談窓口", "lvl": 2, "part": false}, {"no": "12", "id": "s12", "title": "REALIZEマーケット", "lvl": 2, "part": false}, {"no": "13", "id": "s13", "title": "Bマーク", "lvl": 2, "part": false}, {"no": "14", "id": "s14", "title": "潜在ファミリー世帯の即日即決を可能にする営業ノウハウ", "lvl": 2, "part": false}, {"no": "15", "id": "s15", "title": "営業マニュアルとプレゼン教材とEラーニング", "lvl": 2, "part": false}, {"no": "16", "id": "s16", "title": "AI Sales ARENA", "lvl": 2, "part": false}, {"no": "17", "id": "s17", "title": "アオ先生", "lvl": 2, "part": false}, {"no": "18", "id": "s18", "title": "PRESIDENT JOURNEYとPRESIDENT Record", "lvl": 2, "part": false}, {"no": "19", "id": "s19", "title": "RCの地域企業基盤と3つの収益", "lvl": 2, "part": false}, {"no": "20", "id": "s20", "title": "OSMAの法人営業管理と相談受付", "lvl": 2, "part": false}, {"no": "21", "id": "s21", "title": "OSMAのPIPELINEとNEXT ACTION", "lvl": 2, "part": false}, {"no": "22", "id": "s22", "title": "OSMAのRecord連携と引き継ぎと継続支援", "lvl": 2, "part": false}, {"no": "23", "id": "s23", "title": "OSMAの経営可視化と育成と本部支援", "lvl": 2, "part": false}, {"no": "24", "id": "s24", "title": "物件供給と専門家ネットワーク", "lvl": 2, "part": false}, {"no": "25", "id": "s25", "title": "複数の機能がつながることで生まれる強み", "lvl": 1, "part": false}, {"no": "26", "id": "s26", "title": "会社の経営成果まで説明する", "lvl": 1, "part": false}, {"no": "27", "id": "s27", "title": "6者それぞれの変化を深く語る", "lvl": 1, "part": false}, {"no": "28", "id": "s28", "title": "固有の営業技術と、周辺機能の比較を整理する", "lvl": 1, "part": false}, {"no": "29", "id": "s29", "title": "真似しにくさをつくる要素", "lvl": 1, "part": false}, {"no": "30", "id": "s30", "title": "効果を実証する確認指標", "lvl": 1, "part": false}, {"no": "31", "id": "s31", "title": "提案の中心に置く言葉", "lvl": 1, "part": false}, {"no": "32", "id": "s32", "title": "参照資料", "lvl": 1, "part": false}];
+</script>
+<script>
+(function () {
+  "use strict";
+  var CH = window.__CH__;
+
+  /* ---- 目次を組み立てる（側面固定 / 上部バーのパネル の2箇所へ） ---- */
+  function build(el) {
+    var h = "";
+    CH.forEach(function (c) {
+      /* l1＝章、l2＝機能別の各項目、part＝「機能別の効果と変化」の扉 */
+      var cls = c.part ? 'l1 part' : 'l' + c.lvl;
+      h += '<a class="' + cls + '" href="#' + c.id + '" data-id="' + c.id + '">' +
+           '<span class="n">' + c.no + '</span>' +
+           '<span class="t">' + c.title + '</span></a>';
+    });
+    el.innerHTML = h;
+  }
+  var side = document.getElementById("toc-side");
+  var panelToc = document.getElementById("toc-panel");
+  if (side) build(side);
+  build(panelToc);
+
+  /* ---- オーバーレイ目次の開閉（iOS のスクロール飛びを防ぐ） ---- */
+  var box = document.getElementById("tocpanel"),
+      btn = document.getElementById("tocbtn"),
+      cls = document.getElementById("tocclose"),
+      topb = document.getElementById("topbtn"),
+      lockY = 0;
+
+  function open() {
+    lockY = window.scrollY || window.pageYOffset;
+    document.body.style.position = "fixed";
+    document.body.style.top = -lockY + "px";
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    box.classList.add("open");
+    box.setAttribute("aria-hidden", "false");
+    btn.setAttribute("aria-expanded", "true");
+    var cur = panelToc.querySelector('a[aria-current="true"]');
+    if (cur) cur.scrollIntoView({ block: "center" });
+    cls.focus();
+  }
+  function close() {
+    box.classList.remove("open");
+    box.setAttribute("aria-hidden", "true");
+    btn.setAttribute("aria-expanded", "false");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    window.scrollTo(0, lockY);
+  }
+  btn.addEventListener("click", open);
+  cls.addEventListener("click", close);
+
+  /* パネル内リンク：先に閉じてから、復元位置に邪魔されずに移動する */
+  panelToc.addEventListener("click", function (e) {
+    var a = e.target.closest("a");
+    if (!a) return;
+    e.preventDefault();
+    var id = a.dataset.id;
+    close();
+    var el = document.getElementById(id);
+    if (el) {
+      /* close() が scrollTo で復元した直後に動かす（rAF は不可視タブで止まる） */
+      setTimeout(function () {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", "#" + id);
+      }, 0);
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && box.classList.contains("open")) close();
+  });
+
+  topb.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  /* ---- 現在地は「交差監視」ではなくスクロール位置から決める ----
+     節が画面より高いことがあり、交差監視だけでは取りこぼすため。 */
+  var secs = [].slice.call(document.querySelectorAll("main section"));
+  var links = [].slice.call(document.querySelectorAll(".toc a"));
+  var nowNo = document.getElementById("now-no");
+  var nowTtl = document.getElementById("now-ttl");
+  var prog = document.getElementById("prog");
+  var byId = {};
+  CH.forEach(function (c) { byId[c.id] = c; });
+  var lastId = null;
+
+  function currentSection() {
+    var barH = document.querySelector(".topbar").getBoundingClientRect().height;
+    var line = barH + 24, hit = null;
+    for (var i = 0; i < secs.length; i++) {
+      var r = secs[i].getBoundingClientRect();
+      if (r.top <= line) hit = secs[i]; else break;
+    }
+    /* 最下部まで来たら最後の節にする（余白で戻ってしまうのを防ぐ） */
+    var y = window.scrollY || window.pageYOffset;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h > 0 && h - y < 4) hit = secs[secs.length - 1];
+    return hit;
+  }
+
+  function showCurrent() {
+    var s = currentSection();
+    var id = s ? s.id : null;
+    if (id === lastId) return;
+    lastId = id;
+    var c = id ? byId[id] : null;
+    nowNo.textContent = c && c.no ? c.no : "";
+    nowTtl.textContent = c ? c.title : "";
+    links.forEach(function (a) {
+      a.setAttribute("aria-current", a.dataset.id === id ? "true" : "false");
+    });
+  }
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + "%";
+    topb.classList.toggle("on", y > 700);
+    showCurrent();
+  }
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll, { passive: true });
+  addEventListener("load", onScroll);
+  onScroll();
+})();
+</script>
+</body></html>
